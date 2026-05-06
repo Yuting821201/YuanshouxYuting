@@ -543,6 +543,55 @@ body::before{
   border-radius:20px;color:var(--ink-soft);
 }
 
+/* ===== 浮動計算器按鈕 ===== */
+.fab-calc{
+  position:fixed;
+  bottom:32px;right:28px;
+  z-index:50;
+  display:flex;align-items:center;gap:10px;
+  padding:13px 22px 13px 16px;
+  background:var(--ink);
+  color:var(--cream);
+  border-radius:999px;
+  text-decoration:none;
+  font-family:"Cormorant Garamond",serif;
+  font-style:italic;
+  font-size:14px;letter-spacing:.15em;
+  box-shadow:0 8px 28px rgba(58,46,37,.28), 0 2px 6px rgba(58,46,37,.14);
+  transition:all .35s cubic-bezier(.22,.61,.36,1);
+  border:1px solid rgba(255,255,255,.08);
+  white-space:nowrap;
+}
+.fab-calc:hover{
+  background:var(--caramel);
+  transform:translateY(-3px);
+  box-shadow:0 14px 36px rgba(184,132,87,.35), 0 3px 8px rgba(184,132,87,.2);
+}
+.fab-calc-icon{
+  width:30px;height:30px;border-radius:50%;
+  background:rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-style:normal;font-size:15px;
+  transition:transform .35s ease;
+}
+.fab-calc:hover .fab-calc-icon{transform:rotate(-12deg) scale(1.1)}
+.fab-calc-label{line-height:1}
+.fab-calc-label em{
+  display:block;font-size:9px;
+  letter-spacing:.28em;opacity:.65;
+  font-family:"Cormorant Garamond",serif;
+  font-style:italic;margin-bottom:2px;
+}
+
+@media (max-width:760px){
+  .fab-calc{
+    bottom:22px;right:16px;
+    padding:11px 16px 11px 12px;
+    font-size:13px;
+  }
+  .fab-calc-icon{width:26px;height:26px;font-size:13px}
+}
+
 @media (max-width:760px){
   .hero{height:30vh;min-height:200px;padding:20px 22px}
   .hero-inner{flex-direction:row;text-align:left;gap:18px}
@@ -1104,6 +1153,15 @@ document.addEventListener('keydown',(e)=>{
   if(e.key==='Escape') closeDetail();
 });
 </script>
+
+<!-- 浮動計算器按鈕 -->
+<a href="calculator.html" class="fab-calc">
+  <span class="fab-calc-icon">⚖</span>
+  <span class="fab-calc-label">
+    <em>FREE TOOL</em>
+    CP值 熱量計算器
+  </span>
+</a>
 
 </body>
 </html>

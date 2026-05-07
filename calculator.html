@@ -24,8 +24,11 @@
     --shadow-warm: 0 2px 8px rgba(160, 109, 46, 0.08), 0 12px 32px rgba(160, 109, 46, 0.10);
     --shadow-card: 0 1px 2px rgba(160, 109, 46, 0.06), 0 8px 24px rgba(160, 109, 46, 0.08);
   }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
   html { scroll-behavior: smooth; }
+
   body {
     font-family: 'Noto Sans TC', sans-serif;
     background: var(--cream-bg);
@@ -37,6 +40,7 @@
       radial-gradient(circle at 88% 70%, rgba(217, 122, 108, 0.18) 0%, transparent 40%),
       radial-gradient(circle at 50% 95%, rgba(138, 159, 110, 0.15) 0%, transparent 45%);
   }
+
   /* subtle paper grain */
   body::before {
     content: "";
@@ -47,6 +51,7 @@
     opacity: 0.4;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.24  0 0 0 0 0.13  0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   }
+
   .container {
     max-width: 920px;
     margin: 0 auto;
@@ -54,12 +59,14 @@
     position: relative;
     z-index: 2;
   }
+
   /* ========== HERO ========== */
   .hero {
     padding: 72px 0 48px;
     text-align: center;
     position: relative;
   }
+
   .hero-tag {
     display: inline-flex;
     align-items: center;
@@ -80,6 +87,7 @@
     width: 14px; height: 1px;
     background: var(--caramel);
   }
+
   .hero h1 {
     font-family: 'Fraunces', 'Noto Serif TC', serif;
     font-weight: 500;
@@ -106,6 +114,7 @@
     z-index: -1;
     transform: skew(-8deg);
   }
+
   .hero-sub {
     font-family: 'Noto Serif TC', serif;
     font-size: clamp(15px, 1.6vw, 17px);
@@ -115,6 +124,7 @@
     margin: 0 auto 40px;
     line-height: 1.8;
   }
+
   .hero-stats {
     display: flex;
     justify-content: center;
@@ -142,6 +152,7 @@
     opacity: 0.7;
     margin-top: 6px;
   }
+
   /* decorative element */
   .hero-orbit {
     position: absolute;
@@ -164,6 +175,7 @@
     font-size: 18px;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
+
   /* ========== PROGRESS ========== */
   .progress-wrap {
     display: flex;
@@ -218,6 +230,7 @@
     opacity: 0.5;
     font-size: 12px;
   }
+
   /* ========== CARD ========== */
   .card {
     background: var(--cream-soft);
@@ -236,6 +249,7 @@
     border: 1px dashed var(--line-soft);
     pointer-events: none;
   }
+
   .card-title {
     font-family: 'Fraunces', serif;
     font-size: 28px;
@@ -253,6 +267,7 @@
     margin-bottom: 36px;
     letter-spacing: 0.02em;
   }
+
   /* ========== FORM ========== */
   .form-grid {
     display: grid;
@@ -260,6 +275,7 @@
     gap: 22px;
   }
   .form-grid.full-row { grid-template-columns: 1fr; }
+
   .field {
     display: flex;
     flex-direction: column;
@@ -279,6 +295,7 @@
     opacity: 0.5;
     font-weight: 400;
   }
+
   .field input,
   .field select {
     width: 100%;
@@ -305,6 +322,7 @@
     border-color: var(--caramel);
     box-shadow: 0 0 0 4px rgba(232, 208, 156, 0.4);
   }
+
   /* gender toggle */
   .toggle-row {
     display: grid;
@@ -332,6 +350,7 @@
     color: var(--cream-soft);
     border-color: var(--cocoa);
   }
+
   /* activity picker */
   .activity-list {
     display: flex;
@@ -365,6 +384,7 @@
     color: var(--caramel-deep);
     font-size: 14px;
   }
+
   /* CTA */
   .cta-row {
     margin-top: 36px;
@@ -395,6 +415,7 @@
   }
   .btn-primary svg { transition: transform 0.3s ease; }
   .btn-primary:hover svg { transform: translateX(4px); }
+
   .btn-ghost {
     background: transparent;
     color: var(--cocoa);
@@ -407,6 +428,7 @@
     transition: all 0.2s ease;
   }
   .btn-ghost:hover { border-color: var(--cocoa); }
+
   /* ========== RESULTS ========== */
   .results-section {
     display: none;
@@ -419,6 +441,7 @@
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
+
   .result-hero {
     text-align: center;
     margin-bottom: 40px;
@@ -460,6 +483,7 @@
     margin-top: 8px;
     position: relative;
   }
+
   .result-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -494,6 +518,7 @@
   .metric-card.highlight .metric-num { color: var(--cocoa); }
   .metric-unit { font-size: 13px; color: var(--cocoa); opacity: 0.7; margin-top: 6px; }
   .metric-note { font-size: 11px; color: var(--cocoa); opacity: 0.55; margin-top: 8px; font-style: italic; }
+
   /* CP card */
   .cp-card {
     background: linear-gradient(135deg, #fbf6e9 0%, #f5e7c5 100%);
@@ -548,6 +573,7 @@
     opacity: 0.7;
     margin-top: 6px;
   }
+
   .meal-table {
     background: white;
     border-radius: 12px;
@@ -586,6 +612,7 @@
     font-size: 14px;
     color: var(--caramel);
   }
+
   .cp-note {
     margin-top: 20px;
     padding: 14px 18px;
@@ -596,6 +623,7 @@
     opacity: 0.75;
     line-height: 1.7;
   }
+
   /* ========== CTA SECTION ========== */
   .cta-section {
     background: linear-gradient(135deg, #faf4e8 0%, #f0e2c7 100%);
@@ -629,6 +657,7 @@
     background: var(--leaf);
     opacity: 0.12;
   }
+
   .cta-eyebrow {
     font-size: 12px;
     letter-spacing: 0.3em;
@@ -658,6 +687,7 @@
     position: relative;
     line-height: 1.8;
   }
+
   .social-row {
     display: flex;
     justify-content: center;
@@ -690,6 +720,7 @@
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   }
+
   .form-trigger {
     display: inline-flex;
     align-items: center;
@@ -709,6 +740,7 @@
     background: var(--ink);
     transform: translateY(-2px);
   }
+
   /* ========== CONSULTATION FORM ========== */
   .consult-section {
     margin-top: 48px;
@@ -718,6 +750,7 @@
     display: block;
     animation: fadeUp 0.5s ease;
   }
+
   .checkbox-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -743,6 +776,7 @@
     color: var(--cocoa);
     font-weight: 500;
   }
+
   .field textarea {
     width: 100%;
     padding: 14px 16px;
@@ -761,6 +795,7 @@
     border-color: var(--caramel);
     box-shadow: 0 0 0 4px rgba(232, 208, 156, 0.4);
   }
+
   /* success state */
   .success-state {
     text-align: center;
@@ -793,6 +828,7 @@
     margin: 0 auto 24px;
     line-height: 1.8;
   }
+
   /* ========== FOOTER ========== */
   .footer {
     text-align: center;
@@ -818,6 +854,7 @@
     opacity: 1;
     margin-top: 4px;
   }
+
   /* ========== RESPONSIVE ========== */
   @media (max-width: 720px) {
     .hero { padding: 56px 0 32px; }
@@ -835,6 +872,7 @@
     .result-hero-num { font-size: 52px; }
     .checkbox-row { grid-template-columns: 1fr; }
   }
+
   /* food groups (六大類) */
   .food-groups {
     display: grid;
@@ -917,6 +955,7 @@
     opacity: 0.7;
     margin-left: 2px;
   }
+
   /* CP summary inside cp-card */
   .cp-summary {
     background: white;
@@ -940,10 +979,12 @@
     background: var(--line-soft);
     align-self: stretch;
   }
+
   @media (max-width: 720px) {
     .food-groups { grid-template-columns: 1fr; }
     .food-num { font-size: 24px; }
   }
+
   /* ===== LIFESTYLE BLOCK (飲食作息區) ===== */
   .lifestyle-block {
     margin-top: 32px;
@@ -981,6 +1022,7 @@
     font-family: 'Fraunces', serif;
     font-style: italic;
   }
+
   /* meal input rows with tag */
   .meal-input-row {
     display: flex;
@@ -1018,6 +1060,7 @@
     border-color: var(--caramel);
     box-shadow: 0 0 0 3px rgba(232, 208, 156, 0.4);
   }
+
   /* time input styling */
   .time-input {
     font-family: 'Fraunces', serif !important;
@@ -1032,6 +1075,7 @@
     cursor: pointer;
     opacity: 0.7;
   }
+
   /* water picker */
   .water-picker {
     display: flex;
@@ -1110,6 +1154,7 @@
     font-family: 'Fraunces', serif;
     font-style: italic;
   }
+
   /* supplement grid */
   .supp-grid {
     display: grid;
@@ -1151,14 +1196,17 @@
     border-color: var(--caramel);
     box-shadow: 0 0 0 3px rgba(232, 208, 156, 0.4);
   }
+
   @media (max-width: 720px) {
     .lifestyle-block { padding: 22px 16px; }
     .supp-grid { grid-template-columns: repeat(2, 1fr); }
     .water-amount { font-size: 24px; }
     .meal-tag { flex: 0 0 32px; height: 32px; font-size: 14px; }
   }
+
   /* hidden helper */
   .hidden { display: none !important; }
+
   /* ========== SUBMIT BUTTON / SPINNER / SUCCESS ========== */
   .spinner {
     display: inline-block;
@@ -1171,6 +1219,7 @@
     margin-left: 4px;
   }
   @keyframes spin-loader { to { transform: rotate(360deg); } }
+
   .submit-error {
     margin-top: 16px;
     padding: 12px 16px;
@@ -1181,6 +1230,7 @@
     font-size: 13px;
     text-align: center;
   }
+
   .success-check {
     width: 72px;
     height: 72px;
@@ -1198,6 +1248,7 @@
     0% { transform: scale(0); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
   }
+
   /* LINE pulse to draw attention after success */
   @keyframes line-pulse {
     0%, 100% { box-shadow: 0 0 0 0 rgba(6, 199, 85, 0.45); }
@@ -1206,6 +1257,7 @@
   .line-pulse {
     animation: line-pulse 2s ease-out infinite;
   }
+
   /* ========== HIDDEN CAPTURE CARDS (用於截圖) ========== */
   .capture-card {
     position: absolute;
@@ -1393,9 +1445,11 @@
     margin-top: 4px;
     opacity: 0.8;
   }
+
 </style>
 </head>
 <body>
+
   <!-- HERO -->
   <section class="hero">
     <div class="container">
@@ -1407,6 +1461,7 @@
         以及量身打造的 C / P 飲食配額──
         體態管理的第一步，從這裡開始。
       </p>
+
       <div class="hero-stats">
         <div class="stat">
           <div class="stat-num">CP</div>
@@ -1423,6 +1478,7 @@
       </div>
     </div>
   </section>
+
   <!-- PROGRESS -->
   <div class="container">
     <div class="progress-wrap">
@@ -1439,17 +1495,20 @@
       </div>
     </div>
   </div>
+
   <!-- STEP 1: CALCULATOR -->
   <div class="container">
     <div class="card" id="step1">
       <h2 class="card-title">告訴我關於你</h2>
       <p class="card-subtitle">— 越誠實的資料,越能算出貼合你的配方 —</p>
+
       <div class="form-grid full-row">
         <div class="field">
           <label>暱稱 <span class="unit">想讓我怎麼稱呼你?</span></label>
           <input type="text" id="nickname" placeholder="例如:小宇媽咪、Vivian...">
         </div>
       </div>
+
       <div class="form-grid" style="margin-top: 22px;">
         <div class="field">
           <label>性別</label>
@@ -1471,6 +1530,7 @@
           <input type="number" id="weight" placeholder="例如 60" min="30" max="200" step="0.1">
         </div>
       </div>
+
       <div class="form-grid full-row" style="margin-top: 22px;">
         <div class="field">
           <label>日常活動量</label>
@@ -1506,6 +1566,7 @@
           </div>
         </div>
       </div>
+
       <div class="form-grid" style="margin-top: 22px;">
         <div class="field">
           <label>體態目標</label>
@@ -1526,6 +1587,7 @@
           </select>
         </div>
       </div>
+
       <!-- ===== 飲食與作息 ===== -->
       <div class="lifestyle-block">
         <div class="lifestyle-header">
@@ -1534,6 +1596,7 @@
           <span class="lifestyle-line"></span>
         </div>
         <p class="lifestyle-sub">越了解你的日常,我能給的建議就越貼合你</p>
+
         <div class="form-grid full-row" style="margin-top: 24px;">
           <div class="field">
             <label>三餐最常吃什麼 <span class="unit">隨意寫,沒在吃就空著</span></label>
@@ -1551,12 +1614,14 @@
             </div>
           </div>
         </div>
+
         <div class="form-grid full-row" style="margin-top: 22px;">
           <div class="field">
             <label>下午茶 / 點心喜歡吃什麼 <span class="unit">選填</span></label>
             <input type="text" id="f-snack" placeholder="例如:餅乾、蛋糕、手搖飲、水果...誠實的告訴我 ♡">
           </div>
         </div>
+
         <div class="form-grid" style="margin-top: 22px;">
           <div class="field">
             <label>睡覺時間</label>
@@ -1567,6 +1632,7 @@
             <input type="time" id="f-wake" value="07:00" class="time-input">
           </div>
         </div>
+
         <div class="form-grid full-row" style="margin-top: 22px;">
           <div class="field">
             <label>每日飲水量 <span class="unit">每 500ml 一個單位</span></label>
@@ -1583,6 +1649,7 @@
             </div>
           </div>
         </div>
+
         <div class="form-grid full-row" style="margin-top: 22px;">
           <div class="field">
             <label>目前在吃的保健食品 <span class="unit">可複選</span></label>
@@ -1604,6 +1671,7 @@
           </div>
         </div>
       </div>
+
       <div class="cta-row">
         <button class="btn-primary" onclick="calculate()">
           算出我的專屬配方
@@ -1613,14 +1681,17 @@
         </button>
       </div>
     </div>
+
     <!-- STEP 2: RESULTS -->
     <div class="results-section" id="step2">
       <div class="card">
+
         <div class="result-hero">
           <div class="result-hero-label">每日建議攝取熱量</div>
           <div class="result-hero-num"><span id="r-target">1500</span></div>
           <div class="result-hero-unit">kcal / 天</div>
         </div>
+
         <div class="result-grid">
           <div class="metric-card">
             <div class="metric-label">基礎代謝率 BMR</div>
@@ -1646,10 +1717,12 @@
             <div class="metric-note">每週約變化 <span id="r-week-loss">0.3</span> kg</div>
           </div>
         </div>
+
         <!-- 六大類食物配額 -->
         <div class="cp-card">
           <h3 class="cp-card-title">你的每日食物配額</h3>
           <p class="cp-card-sub">— 依國民健康署「每日飲食指南」建議份量 —</p>
+
           <div class="food-groups">
             <div class="food-grp">
               <div class="food-icon">🍚</div>
@@ -1662,6 +1735,7 @@
                 <span class="food-unit">份</span>
               </div>
             </div>
+
             <div class="food-grp">
               <div class="food-icon">🥩</div>
               <div class="food-info">
@@ -1673,6 +1747,7 @@
                 <span class="food-unit">份</span>
               </div>
             </div>
+
             <div class="food-grp">
               <div class="food-icon">🥬</div>
               <div class="food-info">
@@ -1684,6 +1759,7 @@
                 <span class="food-unit">份</span>
               </div>
             </div>
+
             <div class="food-grp">
               <div class="food-icon">🍎</div>
               <div class="food-info">
@@ -1695,6 +1771,7 @@
                 <span class="food-unit">份</span>
               </div>
             </div>
+
             <div class="food-grp food-grp-wide">
               <div class="food-icon">🥛</div>
               <div class="food-info">
@@ -1707,6 +1784,7 @@
               </div>
             </div>
           </div>
+
           <!-- 三餐分配 -->
           <div class="meal-table">
             <div class="meal-row header">
@@ -1730,6 +1808,7 @@
               <div class="meal-cp"><span id="m-dp">1.5</span><span class="letter">P</span></div>
             </div>
           </div>
+
           <div class="cp-note">
             ※ <strong>1 C ≈ 主食 1/4 碗 (15g 碳水)</strong>，
             <strong>1 P ≈ 一個掌心厚度的蛋白質食物 (7g 蛋白)</strong>。
@@ -1739,6 +1818,7 @@
             此為國健署通用建議,實際份量會依你的生活作息、運動習慣、身體狀態量身微調。
           </div>
         </div>
+
         <!-- CTA - 兩階段: 送出資料 → 解鎖 LINE/IG -->
         <div class="cta-section">
           <!-- 階段1: 送出前 -->
@@ -1760,6 +1840,7 @@
             </div>
             <div id="submit-error" class="submit-error" style="display:none;"></div>
           </div>
+
           <!-- 階段2: 送出成功 -->
           <div id="stage-success" style="display:none;">
             <div class="success-check">
@@ -1784,15 +1865,18 @@
             </div>
           </div>
         </div>
+
         <div style="text-align:center; margin-top:24px;">
           <button class="btn-ghost" onclick="resetCalc()">重新計算</button>
         </div>
       </div>
     </div>
   </div>
+
   <!-- ============================================ -->
   <!-- HIDDEN CAPTURE CARDS - 用於 html2canvas 截圖 -->
   <!-- ============================================ -->
+
   <!-- 圖1: 個人基本資料 -->
   <div id="capture-1" class="capture-card">
     <div class="capture-header">
@@ -1803,6 +1887,7 @@
       <div class="capture-title-tag">— 01 / 03 —</div>
     </div>
     <h2 class="capture-page-title">個人基本資料</h2>
+
     <div class="capture-row">
       <span class="capture-label">暱稱</span>
       <span class="capture-value" id="cap-nickname">—</span>
@@ -1839,11 +1924,13 @@
       <span class="capture-label">身體狀態</span>
       <span class="capture-value" id="cap-status">—</span>
     </div>
+
     <div class="capture-foot">
       <span>個人飲食諮詢申請表 · 由 yuting.c_hbd 提供</span>
       <span id="cap-date-1">—</span>
     </div>
   </div>
+
   <!-- 圖2: 飲食作息 -->
   <div id="capture-2" class="capture-card">
     <div class="capture-header">
@@ -1854,6 +1941,7 @@
       <div class="capture-title-tag">— 02 / 03 —</div>
     </div>
     <h2 class="capture-page-title">飲食 &amp; 作息</h2>
+
     <div class="capture-section-title">三餐習慣</div>
     <div class="capture-meal-grid">
       <div class="capture-meal-cell">
@@ -1873,6 +1961,7 @@
         <div class="capture-meal-content" id="cap-snack">—</div>
       </div>
     </div>
+
     <div class="capture-section-title">作息時間</div>
     <div class="capture-row">
       <span class="capture-label">睡覺時間</span>
@@ -1890,15 +1979,18 @@
       <span class="capture-label">每日飲水量</span>
       <span class="capture-value" id="cap-water">—</span>
     </div>
+
     <div class="capture-section-title">保健食品</div>
     <div class="capture-row" style="border:none; padding-top:8px;">
       <span class="capture-value" id="cap-supps" style="max-width:100%; text-align:left; font-weight: 500;">—</span>
     </div>
+
     <div class="capture-foot">
       <span>個人飲食諮詢申請表 · 由 yuting.c_hbd 提供</span>
       <span id="cap-date-2">—</span>
     </div>
   </div>
+
   <!-- 圖3: CP計算結果 -->
   <div id="capture-3" class="capture-card">
     <div class="capture-header">
@@ -1909,11 +2001,13 @@
       <div class="capture-title-tag">— 03 / 03 —</div>
     </div>
     <h2 class="capture-page-title">每日配方計算</h2>
+
     <div class="capture-target">
       <div class="capture-target-label">每日建議攝取熱量</div>
       <div class="capture-target-num" id="cap-target">—</div>
       <div class="capture-target-unit">kcal / 天</div>
     </div>
+
     <div class="capture-metrics">
       <div class="capture-metric">
         <div class="capture-metric-label">BMR</div>
@@ -1928,6 +2022,7 @@
         <div class="capture-metric-num" id="cap-deficit">—</div>
       </div>
     </div>
+
     <div class="capture-section-title">每日食物配額(國健署建議)</div>
     <div class="capture-foods">
       <div class="capture-food">
@@ -1951,6 +2046,7 @@
         <span class="capture-food-num"><span id="cap-milk">—</span><small>杯</small></span>
       </div>
     </div>
+
     <div class="capture-section-title">三餐 C / P 分配</div>
     <div class="capture-foods">
       <div class="capture-food">
@@ -1966,11 +2062,13 @@
         <span class="capture-food-num"><span id="cap-dc">—</span><small>C</small> / <span id="cap-dp">—</span><small>P</small></span>
       </div>
     </div>
+
     <div class="capture-foot">
       <span>個人飲食諮詢申請表 · 由 yuting.c_hbd 提供</span>
       <span id="cap-date-3">—</span>
     </div>
   </div>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
@@ -1980,11 +2078,13 @@
       <div style="margin-top: 8px; font-size: 11px;">© 2025 All rights reserved</div>
     </div>
   </footer>
+
 <script>
   // ===== STATE =====
   let gender = 'female';
   let activity = 1.375;
   const issues = new Set();
+
   // ===== TOGGLES =====
   document.querySelectorAll('#gender-toggle .toggle-opt').forEach(el => {
     el.addEventListener('click', () => {
@@ -1993,6 +2093,7 @@
       gender = el.dataset.value;
     });
   });
+
   document.querySelectorAll('#activity-list .activity-opt').forEach(el => {
     el.addEventListener('click', () => {
       document.querySelectorAll('#activity-list .activity-opt').forEach(o => o.classList.remove('selected'));
@@ -2000,6 +2101,7 @@
       activity = parseFloat(el.dataset.value);
     });
   });
+
   document.querySelectorAll('#f-issues .checkbox-opt').forEach(el => {
     el.addEventListener('click', () => {
       const v = el.dataset.value;
@@ -2007,6 +2109,7 @@
       else { issues.add(v); el.classList.add('selected'); }
     });
   });
+
   // ===== SUPPLEMENT MULTI-SELECT =====
   const supps = new Set();
   document.querySelectorAll('#f-supps .supp-opt').forEach(el => {
@@ -2029,12 +2132,15 @@
       else { supps.add(v); el.classList.add('selected'); }
     });
   });
+
   // ===== WATER PICKER =====
   let waterUnits = 3; // 預設 1500ml = 3 個 500ml
   const MAX_WATER_UNITS = 10; // 最多 5000ml
+
   function renderWater() {
     const ml = waterUnits * 500;
     document.getElementById('water-ml').textContent = ml;
+
     // render cups
     const cupsEl = document.getElementById('water-cups');
     cupsEl.innerHTML = '';
@@ -2044,6 +2150,7 @@
       cup.className = 'cup' + (i < waterUnits ? ' filled' : '');
       cupsEl.appendChild(cup);
     }
+
     // 註解文字
     const note = document.getElementById('water-note');
     if (ml < 1000) note.textContent = '太少了喔,身體會口渴';
@@ -2052,11 +2159,13 @@
     else if (ml < 4000) note.textContent = '很棒!代謝會喜歡';
     else note.textContent = '哇,水超人 ✨';
   }
+
   function changeWater(delta) {
     waterUnits = Math.max(1, Math.min(MAX_WATER_UNITS, waterUnits + delta));
     renderWater();
   }
   renderWater();
+
   // ===== 國健署「每日飲食指南」六大類食物建議份量查表 =====
   // 依107年版每日飲食指南,7個熱量級距(1200~2700 kcal)的建議份數
   // 欄位: [全穀雜糧(碗), 豆魚蛋肉(份), 乳品(杯), 蔬菜(份), 水果(份), 油脂(茶匙), 堅果(份)]
@@ -2069,6 +2178,7 @@
     2500: { grain: 4,   protein: 7, milk: 1.5, veg: 5, fruit: 4, oil: 7, nut: 1 },
     2700: { grain: 4,   protein: 8, milk: 2,   veg: 5, fruit: 4, oil: 8, nut: 1 }
   };
+
   // 找最接近的熱量級距
   function lookupHPA(targetKcal) {
     const levels = Object.keys(HPA_TABLE).map(Number).sort((a,b)=>a-b);
@@ -2081,16 +2191,19 @@
     }
     return { level: closest, ...HPA_TABLE[closest] };
   }
+
   // ===== CALCULATION =====
   function calculate() {
     const age = parseInt(document.getElementById('age').value);
     const height = parseFloat(document.getElementById('height').value);
     const weight = parseFloat(document.getElementById('weight').value);
     const goalMult = parseFloat(document.getElementById('goal').value);
+
     if (!age || !height || !weight) {
       alert('請填寫完整的年齡、身高、體重');
       return;
     }
+
     // Mifflin-St Jeor BMR
     let bmr;
     if (gender === 'male') {
@@ -2098,10 +2211,12 @@
     } else {
       bmr = 10 * weight + 6.25 * height - 5 * age - 161;
     }
+
     const tdee = bmr * activity;
     const target = tdee * goalMult;
     const deficit = tdee - target;
     const bmi = weight / Math.pow(height / 100, 2);
+
     // BMI status
     let bmiStatus = '標準範圍';
     if (bmi < 18.5) bmiStatus = '體重偏輕';
@@ -2109,22 +2224,27 @@
     else if (bmi < 27) bmiStatus = '稍微超標';
     else if (bmi < 30) bmiStatus = '建議調整';
     else bmiStatus = '建議積極調整';
+
     // ===== 查表取得六大類份數 =====
     const portions = lookupHPA(target);
     // 全穀雜糧:1碗 = 4份(每份15g碳水) / 直接以「份」為單位
     // 豆魚蛋肉:1份 = 1P
     const cTotal = portions.grain * 4;   // 碗 → 份
     const pTotal = portions.protein;
+
     // ===== 三餐分配 (早 30% / 午 40% / 晚 30%) =====
     // 主食碳水可以稍微前重後輕(早30/午40/晚30,符合餐盤建議)
     const bC = +(cTotal * 0.3).toFixed(1);
     const lC = +(cTotal * 0.4).toFixed(1);
     const dC = +(cTotal - bC - lC).toFixed(1);
+
     const bP = +(pTotal * 0.3).toFixed(1);
     const lP = +(pTotal * 0.4).toFixed(1);
     const dP = +(pTotal - bP - lP).toFixed(1);
+
     // weekly change estimate (1kg fat ≈ 7700 kcal)
     const weeklyLoss = (deficit * 7 / 7700).toFixed(1);
+
     // ===== 注入結果 =====
     document.getElementById('r-target').textContent = Math.round(target);
     document.getElementById('r-bmr').textContent = Math.round(bmr);
@@ -2133,6 +2253,7 @@
     document.getElementById('r-bmi-status').textContent = bmiStatus;
     document.getElementById('r-deficit').textContent = Math.round(deficit);
     document.getElementById('r-week-loss').textContent = weeklyLoss;
+
     // 五大類食物
     document.getElementById('g-grain').textContent = cTotal;  // 全穀雜糧顯示為「份」
     document.getElementById('g-protein').textContent = portions.protein;
@@ -2140,6 +2261,7 @@
     document.getElementById('g-fruit').textContent = portions.fruit;
     document.getElementById('g-milk').textContent = portions.milk;
     // 油脂與堅果類:減量階段不額外攝取(烹調油已足夠),不顯示
+
     // 三餐
     document.getElementById('m-bc').textContent = bC;
     document.getElementById('m-lc').textContent = lC;
@@ -2147,16 +2269,19 @@
     document.getElementById('m-bp').textContent = bP;
     document.getElementById('m-lp').textContent = lP;
     document.getElementById('m-dp').textContent = dP;
+
     // ===== 同步注入截圖卡片資料 =====
     populateCaptureCards({
       portions, target, bmr, tdee, deficit, bmi, bmiStatus,
       cTotal, pTotal, bC, lC, dC, bP, lP, dP
     });
+
     // ===== TRANSITION =====
     document.getElementById('step2').classList.add('active');
     document.getElementById('pill-1').classList.remove('active');
     document.getElementById('pill-1').classList.add('done');
     document.getElementById('pill-2').classList.add('active');
+
     // 重置送出狀態(萬一使用者重算)
     document.getElementById('stage-submit').style.display = 'block';
     document.getElementById('stage-success').style.display = 'none';
@@ -2166,10 +2291,12 @@
     document.getElementById('submit-text').textContent = '送出我的資料';
     document.getElementById('submit-arrow').style.display = 'inline';
     document.getElementById('submit-spinner').style.display = 'none';
+
     setTimeout(() => {
       document.getElementById('step2').scrollIntoView({behavior: 'smooth', block: 'start'});
     }, 100);
   }
+
   // ===== 把目前資料填入 capture 卡片 (用於截圖) =====
   function populateCaptureCards(d) {
     const today = new Date().toLocaleDateString('zh-TW', {year:'numeric', month:'2-digit', day:'2-digit'});
@@ -2180,6 +2307,7 @@
     const goalLabel = document.querySelector('#goal option:checked').textContent;
     const statusLabel = document.querySelector('#status option:checked').textContent;
     const activityLabel = document.querySelector('#activity-list .activity-opt.selected .activity-main').textContent;
+
     // 圖1 - 個人資料
     document.getElementById('cap-nickname').textContent = nickname;
     document.getElementById('cap-gender').textContent = gender === 'male' ? '男性' : '女性';
@@ -2191,11 +2319,13 @@
     document.getElementById('cap-goal').textContent = goalLabel;
     document.getElementById('cap-status').textContent = statusLabel;
     document.getElementById('cap-date-1').textContent = today;
+
     // 圖2 - 飲食作息
     document.getElementById('cap-meal-b').textContent = document.getElementById('f-meal-b').value.trim() || '(未填寫)';
     document.getElementById('cap-meal-l').textContent = document.getElementById('f-meal-l').value.trim() || '(未填寫)';
     document.getElementById('cap-meal-d').textContent = document.getElementById('f-meal-d').value.trim() || '(未填寫)';
     document.getElementById('cap-snack').textContent = document.getElementById('f-snack').value.trim() || '(未填寫)';
+
     const sleep = document.getElementById('f-sleep').value;
     const wake = document.getElementById('f-wake').value;
     document.getElementById('cap-sleep').textContent = sleep || '(未填寫)';
@@ -2211,6 +2341,7 @@
       document.getElementById('cap-sleep-hr').textContent = `約 ${hr} 小時 ${mn ? mn + ' 分' : ''}`;
     }
     document.getElementById('cap-water').textContent = (waterUnits * 500) + ' ml';
+
     // 保健食品標籤對照
     const suppLabels = {
       multivitamin:'綜合維他命', probiotic:'益生菌', protein:'乳清蛋白',
@@ -2223,6 +2354,7 @@
     if (suppOther) suppList.push('其他: ' + suppOther);
     document.getElementById('cap-supps').textContent = suppList.length ? suppList.join('、') : '(未填寫)';
     document.getElementById('cap-date-2').textContent = today;
+
     // 圖3 - 計算結果
     document.getElementById('cap-target').textContent = Math.round(d.target);
     document.getElementById('cap-bmr').textContent = Math.round(d.bmr);
@@ -2241,9 +2373,11 @@
     document.getElementById('cap-dp').textContent = d.dP;
     document.getElementById('cap-date-3').textContent = today;
   }
+
   // ===== 送出資料到 Google Apps Script =====
   // 部署 Apps Script 後,把 URL 貼在這裡
-  const APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzeA_eG0fXjqV-ZHVMa1FoCreaaQP1Xjo8Dp5p9RZdt7rpsNUGvkDwqsg4kliOQ-F4z/exec';
+
   async function submitToServer() {
     const nickname = document.getElementById('nickname').value.trim();
     if (!nickname) {
@@ -2254,12 +2388,14 @@
       setTimeout(() => document.getElementById('nickname').focus(), 600);
       return;
     }
+
     const btn = document.getElementById('btn-submit');
     btn.disabled = true;
     document.getElementById('submit-text').textContent = '正在送出';
     document.getElementById('submit-arrow').style.display = 'none';
     document.getElementById('submit-spinner').style.display = 'inline-block';
     document.getElementById('submit-error').style.display = 'none';
+
     try {
       // 截 3 張圖
       const imgOptions = {
@@ -2268,12 +2404,15 @@
         useCORS: true,
         logging: false
       };
+
       const card1 = await html2canvas(document.getElementById('capture-1'), imgOptions);
       const card2 = await html2canvas(document.getElementById('capture-2'), imgOptions);
       const card3 = await html2canvas(document.getElementById('capture-3'), imgOptions);
+
       const img1 = card1.toDataURL('image/png');
       const img2 = card2.toDataURL('image/png');
       const img3 = card3.toDataURL('image/png');
+
       // 如果還沒設定 Apps Script URL,直接觸發圖檔下載供人工備份
       if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
         downloadImage(img1, `${nickname}_01_個人資料.png`);
@@ -2282,20 +2421,24 @@
         showSuccess();
         return;
       }
+
       // POST 給 Apps Script
       const payload = {
         nickname: nickname,
         timestamp: new Date().toISOString(),
         images: [img1, img2, img3]
       };
+
       const res = await fetch(APPS_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors', // Apps Script 通常不支援CORS preflight, 用no-cors
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(payload)
       });
+
       // no-cors 模式無法讀取 response,只要沒拋出錯誤就視為成功
       showSuccess();
+
     } catch (err) {
       console.error(err);
       const errEl = document.getElementById('submit-error');
@@ -2305,10 +2448,12 @@
       document.getElementById('submit-text').textContent = '重新送出';
       document.getElementById('submit-arrow').style.display = 'inline';
       document.getElementById('submit-spinner').style.display = 'none';
+
       // 失敗也顯示 LINE 連結作為備援
       setTimeout(showSuccess, 1500);
     }
   }
+
   function showSuccess() {
     document.getElementById('stage-submit').style.display = 'none';
     document.getElementById('stage-success').style.display = 'block';
@@ -2316,6 +2461,7 @@
     document.getElementById('pill-2').classList.remove('active');
     document.getElementById('pill-2').classList.add('done');
   }
+
   function downloadImage(dataUrl, filename) {
     const link = document.createElement('a');
     link.href = dataUrl;
@@ -2324,6 +2470,7 @@
     link.click();
     document.body.removeChild(link);
   }
+
   function resetCalc() {
     document.getElementById('step2').classList.remove('active');
     document.getElementById('step3').classList.remove('active');
@@ -2334,5 +2481,6 @@
     document.getElementById('step1').scrollIntoView({behavior: 'smooth'});
   }
 </script>
+
 </body>
 </html>

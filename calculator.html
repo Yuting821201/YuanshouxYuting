@@ -1635,13 +1635,13 @@
 
         <div class="form-grid full-row" style="margin-top: 22px;">
           <div class="field">
-            <label>每日飲水量 <span class="unit">每 500ml 一個單位</span></label>
+            <label>每日飲水量 <span class="unit">每 200ml 一個單位</span></label>
             <div class="water-picker">
               <button type="button" class="water-btn" onclick="changeWater(-1)">−</button>
               <div class="water-display">
                 <div class="water-cups" id="water-cups"></div>
                 <div class="water-amount">
-                  <span id="water-ml">1500</span><span class="water-unit">ml</span>
+                  <span id="water-ml">1400</span><span class="water-unit">ml</span>
                 </div>
                 <div class="water-note" id="water-note">約 3 瓶礦泉水</div>
               </div>
@@ -2134,17 +2134,17 @@
   });
 
   // ===== WATER PICKER =====
-  let waterUnits = 3; // 預設 1500ml = 3 個 500ml
-  const MAX_WATER_UNITS = 10; // 最多 5000ml
+  let waterUnits = 7; // 預設 1400ml = 7 個 200ml
+  const MAX_WATER_UNITS = 25; // 最多 5000ml
 
   function renderWater() {
-    const ml = waterUnits * 500;
+    const ml = waterUnits * 200;
     document.getElementById('water-ml').textContent = ml;
 
     // render cups
     const cupsEl = document.getElementById('water-cups');
     cupsEl.innerHTML = '';
-    const total = Math.max(waterUnits, 6); // 至少顯示6格作為視覺基準
+    const total = Math.max(waterUnits, 8); // 至少顯示8格作為視覺基準
     for (let i = 0; i < total; i++) {
       const cup = document.createElement('div');
       cup.className = 'cup' + (i < waterUnits ? ' filled' : '');
@@ -2153,9 +2153,9 @@
 
     // 註解文字
     const note = document.getElementById('water-note');
-    if (ml < 1000) note.textContent = '太少了喔,身體會口渴';
-    else if (ml < 1500) note.textContent = '基本量,還可以再多一點';
-    else if (ml < 2500) note.textContent = `約 ${Math.round(ml/500)} 瓶礦泉水`;
+    if (ml < 800) note.textContent = '太少了喔,身體會口渴';
+    else if (ml < 1200) note.textContent = '基本量,還可以再多一點';
+    else if (ml < 2500) note.textContent = `約 ${(ml/1000).toFixed(1)} 公升`;
     else if (ml < 4000) note.textContent = '很棒!代謝會喜歡';
     else note.textContent = '哇,水超人 ✨';
   }
@@ -2340,7 +2340,7 @@
       const mn = mins % 60;
       document.getElementById('cap-sleep-hr').textContent = `約 ${hr} 小時 ${mn ? mn + ' 分' : ''}`;
     }
-    document.getElementById('cap-water').textContent = (waterUnits * 500) + ' ml';
+    document.getElementById('cap-water').textContent = (waterUnits * 200) + ' ml';
 
     // 保健食品標籤對照
     const suppLabels = {

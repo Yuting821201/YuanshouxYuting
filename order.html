@@ -472,6 +472,7 @@ function submitOrder() {
   const btn = document.getElementById('submitBtn');
   btn.textContent = '送出中…';
   btn.disabled = true;
+
   const payload = {
     orderTime:     now,
     name:          name,
@@ -487,18 +488,19 @@ function submitOrder() {
     note:          note,
     ...qtyMap,
   };
-  // 共用：顯示匯款彈窗
-  function showSuccessModal() {
+
+  const nextDate = new Date();
+  nextDate.setMonth(nextDate.getMonth() + 2);
+  const nextDateStr = nextDate.getFullYear() + ' 年 ' + (nextDate.getMonth()+1) + ' 月 ' + nextDate.getDate() + ' 日';
+  const isSVIP      = (currentRank === '官方SVIP');
+  const bankAccount = isSVIP ? '0141940094795' : '0141976039945';
+  const bankLabel   = isSVIP ? '官方SVIP 專屬帳號' : '第二～四階級帳號';
+
+  function showModal() {
     btn.textContent = '確認送出訂單';
     btn.disabled = false;
     document.getElementById('modal-icon').textContent  = '✦';
     document.getElementById('modal-title').textContent = '訂單已發送';
-    const nextDate = new Date();
-    nextDate.setMonth(nextDate.getMonth() + 2);
-    const nextDateStr = nextDate.getFullYear() + ' 年 ' + (nextDate.getMonth()+1) + ' 月 ' + nextDate.getDate() + ' 日';
-    const isSVIP      = (currentRank === '官方SVIP');
-    const bankAccount = isSVIP ? '0141940094795' : '0141976039945';
-    const bankLabel   = isSVIP ? '官方SVIP 專屬帳號' : '第二～四階級帳號';
     document.getElementById('modal-content').innerHTML = `
       <div style="text-align:left">
         <div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:10px">匯款資訊</div>
@@ -517,26 +519,42 @@ function submitOrder() {
           <div style="font-size:16px;font-weight:600;color:#fff">${nextDateStr}<span style="font-size:11px;color:#888;margin-left:6px">前</span></div>
         </div>
         <div style="height:1px;background:#2a2a2a;margin:14px 0"></div>
-        <div style="font-size:12px;color:#555;text-align:center">叫貨單已記錄至 Google Sheet</div>
+        <div style="font-size:12px;color:#555;text-align:center">叫貨單已記錄至 Google Sheet ✓</div>
       </div>
     `;
     document.getElementById('modal').classList.add('active');
   }
 
-  fetch(API_URL, {
+  // 等待 Apps Script 確認寫入與寄信完成後才顯示
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 20000); // 20秒逾時
+
+  fetch(API_URL + '?t=' + Date.now(), {
     method: 'POST',
-    mode: 'no-cors',
     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-    body: JSON.stringify(payload)
+    body: JSON.stringify(payload),
+    signal: controller.signal
   })
-  .then(() => {
-    // no-cors 模式無法讀取回應，只要不拋出錯誤就視為成功
-    showSuccessModal();
+  .then(res => res.json())
+  .then(result => {
+    clearTimeout(timeout);
+    if (result.success) {
+      showModal();
+    } else {
+      btn.textContent = '確認送出訂單';
+      btn.disabled = false;
+      alert('❌ 送出失敗，請稍後再試或直接聯繫小編。\n錯誤：' + (result.error || '未知'));
+    }
   })
-  .catch((err) => {
-    // 網路錯誤仍顯示匯款視窗，避免卡住
-    console.warn('fetch error:', err);
-    showSuccessModal();
+  .catch(err => {
+    clearTimeout(timeout);
+    btn.textContent = '確認送出訂單';
+    btn.disabled = false;
+    if (err.name === 'AbortError') {
+      alert('⚠️ 連線逾時，請確認網路後再試，或直接聯繫小編。');
+    } else {
+      alert('⚠️ 網路錯誤，請稍後再試。\n' + err.message);
+    }
   });
 }
 function copyAccount(acct) {

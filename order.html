@@ -324,7 +324,8 @@
     <button class="submit-btn" id="submitBtn" onclick="submitOrder()">確認送出訂單</button>
   </div>
 </div>
-<!-- Modal -->
+
+<!-- Modal 1：匯款資訊 -->
 <div class="modal-overlay" id="modal">
   <div class="modal">
     <div class="modal-icon" id="modal-icon">✦</div>
@@ -334,25 +335,23 @@
   </div>
 </div>
 
-<!-- 第二個提醒視窗 -->
+<!-- Modal 2：完成提示 -->
 <div class="modal-overlay" id="modal2">
-  <div class="modal" style="text-align:center">
+  <div class="modal" style="max-width:340px">
     <div class="modal-icon">🎉</div>
-    <h2 id="modal2-name" style="font-size:18px;line-height:1.5;margin-bottom:14px"></h2>
-    <div style="background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);border-radius:10px;padding:18px 16px;text-align:left;margin-bottom:6px">
-      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px">
-        <span style="font-size:18px;flex-shrink:0">📸</span>
-        <span style="font-size:14px;color:var(--text);line-height:1.7">匯款後請截圖匯款資料</span>
-      </div>
-      <div style="display:flex;align-items:flex-start;gap:10px">
-        <span style="font-size:18px;flex-shrink:0">💬</span>
-        <span style="font-size:14px;color:var(--text);line-height:1.7">傳送至官方 LINE 給小編唷</span>
-      </div>
-    </div>
-    <button class="modal-close" onclick="closeModal2()" style="margin-top:18px">好的，了解！</button>
+    <h2 id="modal2-msg" style="font-size:17px;line-height:1.6;margin-bottom:12px"></h2>
+    <p style="font-size:14px;color:var(--text-muted);line-height:2;text-align:center">
+      匯款後請截圖匯款資料<br>
+      傳送至官方 LINE 給小編唷 🙌
+    </p>
+    <button class="modal-close" onclick="closeModal2()">好的！</button>
   </div>
 </div>
+
 <script>
+// ── Apps Script API 網址（後端）─────────────────────────────
+const API_URL = 'https://script.google.com/macros/s/AKfycbxdICiA5NjXwpTzIghBbFyZj2PoukQSzLTyhW21Lt2e2mD-nkl4V2MEnC_c2Z0ckg/exec';
+// ─────────────────────────────────────────────────────────────
 const PRICES = {
   '官方SVIP': { xs:2780, '66':2480, moon:2280, bn:1300, sf:1680, km:1390, gl:880,  ph:1580 },
   '第二階級': { xs:2380, '66':2190, moon:2050, bn:1250, sf:1490, km:1300, gl:820,  ph:1450 },
@@ -421,7 +420,6 @@ function calcTotal() {
     shippingEl.textContent = shipping > 0 ? shipping + ' 元' : '免運';
     shippingEl.style.color = shipping > 0 ? 'var(--text)' : 'var(--gold)';
     totalEl.innerHTML = grandTotal.toLocaleString() + '<small> 元</small>';
-    // Min order bar
     minBar.style.display = 'flex';
     const pct = Math.min(100, Math.round(subtotal / minAmt * 100));
     minFill.style.width = pct + '%';
@@ -468,25 +466,25 @@ function submitOrder() {
     const diff = minAmt - subtotal;
     return alert('⚠️ 未達最低叫貨金額\n\n' + currentRank + ' 最低叫貨：' + minAmt.toLocaleString() + ' 元\n目前小計：' + subtotal.toLocaleString() + ' 元\n尚差：' + diff.toLocaleString() + ' 元');
   }
-  const shippingNum  = (currentRank === '官方SVIP' || currentRank === '第二階級') ? 60 : 0;
+  const shippingNum   = (currentRank === '官方SVIP' || currentRank === '第二階級') ? 60 : 0;
   const grandTotalNum = subtotal + shippingNum;
   const now = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
   const btn = document.getElementById('submitBtn');
   btn.textContent = '送出中…';
   btn.disabled = true;
   const payload = {
-    orderTime:    now,
-    name:         name,
-    rank:         currentRank,
-    phone:        phone,
-    address:      address,
-    orderLines:   orderLines,
-    shipping:     shippingNum > 0 ? shippingNum + ' 元' : '免運',
-    shippingNum:  shippingNum,
-    subtotal:     subtotal,
-    grandTotal:   grandTotalNum.toLocaleString() + ' 元',
+    orderTime:     now,
+    name:          name,
+    rank:          currentRank,
+    phone:         phone,
+    address:       address,
+    orderLines:    orderLines,
+    shipping:      shippingNum > 0 ? shippingNum + ' 元' : '免運',
+    shippingNum:   shippingNum,
+    subtotal:      subtotal,
+    grandTotal:    grandTotalNum.toLocaleString() + ' 元',
     grandTotalNum: grandTotalNum,
-    note:         note,
+    note:          note,
     ...qtyMap,
   };
   google.script.run
@@ -496,12 +494,10 @@ function submitOrder() {
       if(result.success) {
         document.getElementById('modal-icon').textContent  = '✦';
         document.getElementById('modal-title').textContent = '訂單已發送';
-        // 計算下次補貨期限（兩個月後）
         const nextDate = new Date();
         nextDate.setMonth(nextDate.getMonth() + 2);
         const nextDateStr = nextDate.getFullYear() + ' 年 ' + (nextDate.getMonth()+1) + ' 月 ' + nextDate.getDate() + ' 日';
-        // 匯款帳號
-        const isSVIP = (currentRank === '官方SVIP');
+        const isSVIP      = (currentRank === '官方SVIP');
         const bankAccount = isSVIP ? '0141940094795' : '0141976039945';
         const bankLabel   = isSVIP ? '官方SVIP 專屬帳號' : '第二～四階級帳號';
         document.getElementById('modal-content').innerHTML = `
@@ -544,12 +540,8 @@ function copyAccount(acct) {
     const btn = document.getElementById('copy-btn');
     btn.textContent = '已複製 ✓';
     btn.style.background = 'rgba(201,168,76,.3)';
-    setTimeout(() => {
-      btn.textContent = '複製';
-      btn.style.background = 'rgba(201,168,76,.15)';
-    }, 2000);
+    setTimeout(() => { btn.textContent = '複製'; btn.style.background = 'rgba(201,168,76,.15)'; }, 2000);
   }).catch(() => {
-    // fallback for older browsers
     const el = document.createElement('textarea');
     el.value = acct;
     document.body.appendChild(el);
@@ -563,10 +555,10 @@ function copyAccount(acct) {
 }
 function closeModal() {
   document.getElementById('modal').classList.remove('active');
-  // 成功訂單才顯示第二個提醒視窗
+  // 成功訂單才顯示第二個提示視窗
   if (document.getElementById('modal-title').textContent === '訂單已發送') {
     const name = document.getElementById('name').value.trim();
-    document.getElementById('modal2-name').textContent = name + ' 您已完成訂單寄送 ✓';
+    document.getElementById('modal2-msg').textContent = name + ' 您已完成訂單寄送';
     setTimeout(() => {
       document.getElementById('modal2').classList.add('active');
     }, 300);

@@ -333,6 +333,25 @@
     <button class="modal-close" onclick="closeModal()">確認</button>
   </div>
 </div>
+
+<!-- 第二個提醒視窗 -->
+<div class="modal-overlay" id="modal2">
+  <div class="modal" style="text-align:center">
+    <div class="modal-icon">🎉</div>
+    <h2 id="modal2-name" style="font-size:18px;line-height:1.5;margin-bottom:14px"></h2>
+    <div style="background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);border-radius:10px;padding:18px 16px;text-align:left;margin-bottom:6px">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px">
+        <span style="font-size:18px;flex-shrink:0">📸</span>
+        <span style="font-size:14px;color:var(--text);line-height:1.7">匯款後請截圖匯款資料</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <span style="font-size:18px;flex-shrink:0">💬</span>
+        <span style="font-size:14px;color:var(--text);line-height:1.7">傳送至官方 LINE 給小編唷</span>
+      </div>
+    </div>
+    <button class="modal-close" onclick="closeModal2()" style="margin-top:18px">好的，了解！</button>
+  </div>
+</div>
 <script>
 const PRICES = {
   '官方SVIP': { xs:2780, '66':2480, moon:2280, bn:1300, sf:1680, km:1390, gl:880,  ph:1580 },
@@ -544,6 +563,17 @@ function copyAccount(acct) {
 }
 function closeModal() {
   document.getElementById('modal').classList.remove('active');
+  // 成功訂單才顯示第二個提醒視窗
+  if (document.getElementById('modal-title').textContent === '訂單已發送') {
+    const name = document.getElementById('name').value.trim();
+    document.getElementById('modal2-name').textContent = name + ' 您已完成訂單寄送 ✓';
+    setTimeout(() => {
+      document.getElementById('modal2').classList.add('active');
+    }, 300);
+  }
+}
+function closeModal2() {
+  document.getElementById('modal2').classList.remove('active');
 }
 </script>
 </body>

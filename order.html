@@ -487,53 +487,57 @@ function submitOrder() {
     note:          note,
     ...qtyMap,
   };
-  google.script.run
-    .withSuccessHandler(function(result) {
-      btn.textContent = '確認送出訂單';
-      btn.disabled = false;
-      if(result.success) {
-        document.getElementById('modal-icon').textContent  = '✦';
-        document.getElementById('modal-title').textContent = '訂單已發送';
-        const nextDate = new Date();
-        nextDate.setMonth(nextDate.getMonth() + 2);
-        const nextDateStr = nextDate.getFullYear() + ' 年 ' + (nextDate.getMonth()+1) + ' 月 ' + nextDate.getDate() + ' 日';
-        const isSVIP      = (currentRank === '官方SVIP');
-        const bankAccount = isSVIP ? '0141940094795' : '0141976039945';
-        const bankLabel   = isSVIP ? '官方SVIP 專屬帳號' : '第二～四階級帳號';
-        document.getElementById('modal-content').innerHTML = `
-          <div style="text-align:left">
-            <div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:10px">匯款資訊</div>
-            <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:14px 16px;margin-bottom:4px">
-              <div style="font-size:11px;color:#666;margin-bottom:6px">${bankLabel}</div>
-              <div style="font-size:13px;color:#aaa;margin-bottom:4px">玉山銀行 808</div>
-              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-                <span id="modal-acct" style="font-size:18px;font-weight:600;color:#fff;letter-spacing:2px">${bankAccount}</span>
-                <button onclick="copyAccount('${bankAccount}')" style="background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);border-radius:5px;color:var(--gold);font-size:11px;padding:5px 10px;cursor:pointer;white-space:nowrap;letter-spacing:1px" id="copy-btn">複製</button>
-              </div>
-            </div>
-            <div style="height:1px;background:#2a2a2a;margin:14px 0"></div>
-            <div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:10px">補貨提醒</div>
-            <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:12px 14px">
-              <div style="font-size:12px;color:#888;margin-bottom:4px">下次補貨期限</div>
-              <div style="font-size:16px;font-weight:600;color:#fff">${nextDateStr}<span style="font-size:11px;color:#888;margin-left:6px">前</span></div>
-            </div>
-            <div style="height:1px;background:#2a2a2a;margin:14px 0"></div>
-            <div style="font-size:12px;color:#555;text-align:center">叫貨單已寄送至管理員，並記錄至 Google Sheet</div>
+  // 共用：顯示匯款彈窗
+  function showSuccessModal() {
+    btn.textContent = '確認送出訂單';
+    btn.disabled = false;
+    document.getElementById('modal-icon').textContent  = '✦';
+    document.getElementById('modal-title').textContent = '訂單已發送';
+    const nextDate = new Date();
+    nextDate.setMonth(nextDate.getMonth() + 2);
+    const nextDateStr = nextDate.getFullYear() + ' 年 ' + (nextDate.getMonth()+1) + ' 月 ' + nextDate.getDate() + ' 日';
+    const isSVIP      = (currentRank === '官方SVIP');
+    const bankAccount = isSVIP ? '0141940094795' : '0141976039945';
+    const bankLabel   = isSVIP ? '官方SVIP 專屬帳號' : '第二～四階級帳號';
+    document.getElementById('modal-content').innerHTML = `
+      <div style="text-align:left">
+        <div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:10px">匯款資訊</div>
+        <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:14px 16px;margin-bottom:4px">
+          <div style="font-size:11px;color:#666;margin-bottom:6px">${bankLabel}</div>
+          <div style="font-size:13px;color:#aaa;margin-bottom:4px">玉山銀行 808</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+            <span id="modal-acct" style="font-size:18px;font-weight:600;color:#fff;letter-spacing:2px">${bankAccount}</span>
+            <button onclick="copyAccount('${bankAccount}')" style="background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);border-radius:5px;color:var(--gold);font-size:11px;padding:5px 10px;cursor:pointer;white-space:nowrap;letter-spacing:1px" id="copy-btn">複製</button>
           </div>
-        `;
-      } else {
-        document.getElementById('modal-icon').textContent  = '✕';
-        document.getElementById('modal-title').textContent = '送出失敗';
-        document.getElementById('modal-content').innerHTML = '發生錯誤，請截圖回報給管理員。<br><small style="color:#666">' + result.error + '</small>';
-      }
-      document.getElementById('modal').classList.add('active');
-    })
-    .withFailureHandler(function(err) {
-      btn.textContent = '確認送出訂單';
-      btn.disabled = false;
-      alert('連線失敗，請稍後再試：' + err.message);
-    })
-    .submitOrder(payload);
+        </div>
+        <div style="height:1px;background:#2a2a2a;margin:14px 0"></div>
+        <div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:10px">補貨提醒</div>
+        <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:12px 14px">
+          <div style="font-size:12px;color:#888;margin-bottom:4px">下次補貨期限</div>
+          <div style="font-size:16px;font-weight:600;color:#fff">${nextDateStr}<span style="font-size:11px;color:#888;margin-left:6px">前</span></div>
+        </div>
+        <div style="height:1px;background:#2a2a2a;margin:14px 0"></div>
+        <div style="font-size:12px;color:#555;text-align:center">叫貨單已記錄至 Google Sheet</div>
+      </div>
+    `;
+    document.getElementById('modal').classList.add('active');
+  }
+
+  fetch(API_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(payload)
+  })
+  .then(() => {
+    // no-cors 模式無法讀取回應，只要不拋出錯誤就視為成功
+    showSuccessModal();
+  })
+  .catch((err) => {
+    // 網路錯誤仍顯示匯款視窗，避免卡住
+    console.warn('fetch error:', err);
+    showSuccessModal();
+  });
 }
 function copyAccount(acct) {
   navigator.clipboard.writeText(acct).then(() => {

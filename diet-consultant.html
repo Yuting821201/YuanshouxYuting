@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>正念飲食顧問 × 國考營養師｜營養師協同顧問訂閱計畫</title>
+<style>
+:root {
+  --beige:    #F5EDE0;
+  --beige2:   #EDE0CC;
+  --cream:    #FAF6F0;
+  --sage:     #7A9976;
+  --sage2:    #5E7E5A;
+  --sage-lt:  #C8D8C4;
+  --brown:    #4A3728;
+  --brown2:   #6B5744;
+  --brown3:   #9A7D6A;
+  --gold:     #C4934B;
+  --gold2:    #A87A38;
+  --white:    #FFFFFF;
+  --text:     #3A2E26;
+  --text2:    #7A6257;
+  --text3:    #A8968A;
+  --pad: 72px 20px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Helvetica Neue','PingFang TC','Microsoft JhengHei',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;}
+
+/* ── LAYOUT ── */
+.container{max-width:900px;margin:0 auto;padding:0 20px;}
+
+/* ── TOP NAV ── */
+nav{background:var(--white);border-bottom:1px solid var(--beige2);padding:0 24px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:56px;}
+.nav-brand{font-size:13px;font-weight:700;color:var(--brown);letter-spacing:1px;}
+.nav-brand span{color:var(--sage);}
+.nav-cta{background:var(--sage);color:white;font-size:12px;font-weight:700;padding:7px 16px;border-radius:20px;text-decoration:none;letter-spacing:1px;transition:background .2s;}
+.nav-cta:hover{background:var(--sage2);}
+
+/* ── UTILS ── */
+.label{display:inline-block;font-size:11px;font-weight:700;letter-spacing:3px;color:var(--brown3);border-bottom:2px solid var(--gold);padding-bottom:3px;margin-bottom:18px;}
+.h1{font-size:clamp(26px,5vw,42px);font-weight:900;color:var(--brown);line-height:1.3;margin-bottom:14px;}
+.h1 em{font-style:normal;color:var(--sage);}
+.h2{font-size:clamp(22px,4vw,34px);font-weight:800;color:var(--brown);line-height:1.35;margin-bottom:12px;}
+.h2 em{font-style:normal;color:var(--sage);}
+.sub{font-size:15px;color:var(--text2);line-height:1.8;}
+.divline{width:40px;height:3px;background:var(--gold);border-radius:3px;margin:14px 0 28px;}
+
+/* ── HERO ── */
+#hero{
+  position:relative;overflow:hidden;
+  min-height:88vh;
+  display:flex;align-items:center;
+  background:#C8BFBA; /* fallback while image loads */
+}
+#hero-bg{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:25% top; /* 人像靠左，右側留白給文字 */
+  z-index:0;
+  display:block;
+}
+/* 下半段漸層，上方人臉完全露出，下方文字清晰 */
+#hero::after{
+  content:'';
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(
+    to top,
+    rgba(245,237,224,0.97) 0%,
+    rgba(245,237,224,0.90) 30%,
+    rgba(245,237,224,0.40) 52%,
+    transparent 65%
+  );
+}
+.hero-inner{
+  position:relative;z-index:2;
+  display:flex;
+  align-items:flex-end;     /* 貼底部 */
+  justify-content:flex-start; /* 靠左 */
+  width:100%;
+  min-height:88vh;
+  padding:0 40px 48px;
+}
+.hero-text{
+  max-width:520px;
+  width:100%;
+  text-align:left;
+}
+@media(max-width:600px){
+  .hero-inner{ padding:0 20px 36px; }
+  .hero-text{ max-width:100%; }
+}
+.hero-badge{font-size:12px;color:var(--brown3);letter-spacing:3px;margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.hero-badge::before{content:'';display:inline-block;width:32px;height:1px;background:var(--brown3);}
+.hero-chips{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;margin:20px 0;}
+.chip{display:inline-flex;align-items:center;gap:8px;background:white;border-radius:24px;padding:7px 16px;font-size:13px;color:var(--brown2);font-weight:600;box-shadow:0 2px 10px rgba(0,0,0,.06);width:fit-content;}
+.chip .ci{font-size:15px;}
+.hero-img{flex:0 0 340px;max-width:340px;align-self:flex-end;position:relative;}
+.hero-img-box{
+  width:100%;aspect-ratio:3/4;
+  background:linear-gradient(160deg,var(--beige2),#E8D8C4);
+  border-radius:20px 20px 0 0;
+  overflow:hidden;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;position:relative;
+}
+.hero-img-box img{width:100%;height:100%;object-fit:cover;object-position:top;display:none;position:absolute;inset:0;}
+.hero-img-box input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.img-placeholder{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text3);font-size:12px;pointer-events:none;text-align:center;padding:20px;}
+.img-placeholder .emoji{font-size:32px;}
+
+/* ── STATS BAR ── */
+.stats-bar{background:var(--brown);padding:28px 20px;}
+.stats-inner{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:0;}
+.stat-item{flex:1;min-width:200px;text-align:center;padding:16px 20px;position:relative;}
+.stat-item+.stat-item::before{content:'';position:absolute;left:0;top:20%;height:60%;width:1px;background:rgba(255,255,255,.15);}
+.stat-icon{font-size:28px;margin-bottom:8px;display:block;}
+.stat-title{font-size:15px;font-weight:700;color:white;margin-bottom:4px;}
+.stat-desc{font-size:12px;color:rgba(255,255,255,.6);line-height:1.6;}
+
+/* ── PAIN ── */
+#pain{padding:var(--pad);background:white;text-align:center;}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:36px;}
+.pain-card{background:var(--cream);border-radius:16px;padding:24px 18px;text-align:left;border-left:3px solid var(--sage-lt);}
+.pain-num{font-size:11px;font-weight:700;color:var(--sage);letter-spacing:2px;margin-bottom:8px;}
+.pain-card h4{font-size:14px;font-weight:700;color:var(--brown);margin-bottom:6px;line-height:1.4;}
+.pain-card p{font-size:12px;color:var(--text2);line-height:1.7;}
+.pain-icon-wrap{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px;}
+.pi-1{background:#E8D5C4;}
+.pi-2{background:#C8D8C4;}
+.pi-3{background:#D4C8B8;}
+.pi-4{background:#C4CDD8;}
+.pi-5{background:#D8C8D4;}
+.pi-6{background:#D8D4C4;}
+.pi-7{background:#C8D4C0;}
+
+/* ── HOW ── */
+#how{padding:var(--pad);background:var(--beige);text-align:center;}
+.steps{display:flex;flex-direction:column;gap:16px;margin-top:36px;text-align:left;}
+.step{display:flex;gap:20px;align-items:flex-start;background:white;border-radius:16px;padding:22px 24px;box-shadow:0 3px 16px rgba(0,0,0,.04);transition:transform .2s;}
+.step:hover{transform:translateX(4px);}
+.step-n{flex-shrink:0;width:38px;height:38px;border-radius:50%;background:var(--sage);color:white;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;}
+.step h3{font-size:16px;font-weight:700;color:var(--brown);margin-bottom:5px;}
+.step p{font-size:13px;color:var(--text2);line-height:1.7;}
+
+/* ── WHY ── */
+#why{padding:var(--pad);background:white;text-align:center;}
+.why-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px;text-align:left;}
+@media(max-width:600px){.why-cols{grid-template-columns:1fr;}}
+.why-card{background:var(--cream);border-radius:16px;padding:24px 20px;}
+.why-card .wic{width:40px;height:40px;border-radius:12px;background:var(--sage-lt);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px;}
+.why-card h4{font-size:15px;font-weight:700;color:var(--brown);margin-bottom:6px;}
+.why-card p{font-size:13px;color:var(--text2);line-height:1.7;}
+
+/* ── VS SECTION ── */
+#vs{padding:var(--pad);background:var(--beige);}
+.vs-inner{max-width:700px;margin:0 auto;text-align:center;}
+.vs-wrap{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px;align-items:stretch;}
+.vs-box{flex:1;min-width:240px;border-radius:20px;padding:28px 24px;text-align:left;}
+.vs-no{background:white;border:2px solid var(--beige2);}
+.vs-yes{background:linear-gradient(145deg,#EBF2EA,#E0ECD8);border:2px solid var(--sage-lt);}
+.vs-tag{font-size:12px;font-weight:700;letter-spacing:2px;padding:4px 12px;border-radius:12px;display:inline-block;margin-bottom:14px;}
+.vs-no .vs-tag{background:#F5E0E0;color:#C06060;}
+.vs-yes .vs-tag{background:var(--sage-lt);color:var(--sage2);}
+.vs-box h3{font-size:17px;font-weight:800;color:var(--brown);margin-bottom:8px;line-height:1.3;}
+.vs-box .vd{font-size:12px;color:var(--text2);margin-bottom:16px;line-height:1.6;}
+.vs-box ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.vs-box li{font-size:13px;color:var(--text2);display:flex;align-items:flex-start;gap:6px;}
+.vs-no li::before{content:'✕';color:#C06060;font-weight:700;flex-shrink:0;}
+.vs-yes li::before{content:'✓';color:var(--sage);font-weight:700;flex-shrink:0;}
+.vs-arrow{display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--brown3);padding:0 4px;flex-shrink:0;}
+
+/* ── FREE ── */
+#free{padding:var(--pad);background:white;text-align:center;}
+.free-box{max-width:680px;margin:0 auto;}
+.free-gift{font-size:28px;margin-bottom:12px;display:block;}
+.free-title{font-size:clamp(24px,4vw,36px);font-weight:900;color:var(--brown);line-height:1.3;margin-bottom:8px;}
+.free-title em{color:var(--sage);font-style:normal;}
+.free-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin:32px 0;}
+.fg-card{background:var(--cream);border-radius:16px;padding:20px 16px;text-align:center;}
+.fg-icon{font-size:24px;margin-bottom:8px;display:block;}
+.fg-card h4{font-size:14px;font-weight:700;color:var(--brown);margin-bottom:4px;}
+.fg-card p{font-size:12px;color:var(--text2);line-height:1.6;}
+.team-badge{display:inline-flex;align-items:center;gap:10px;background:var(--brown);color:white;padding:10px 20px;border-radius:30px;font-size:13px;font-weight:700;margin:16px auto 0;}
+.team-badge span{background:var(--gold);border-radius:12px;padding:2px 10px;font-size:12px;}
+.five-icons{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-top:28px;}
+.fi{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:80px;}
+.fi-icon{width:52px;height:52px;border-radius:50%;background:var(--beige);border:2px solid var(--beige2);display:flex;align-items:center;justify-content:center;font-size:22px;}
+.fi p{font-size:11px;color:var(--brown2);font-weight:600;text-align:center;line-height:1.4;}
+
+/* ── TESTIMONIALS ── */
+#testi{padding:var(--pad);background:var(--beige);}
+.testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px;}
+@media(max-width:500px){.testi-grid{grid-template-columns:1fr;}}
+.testi-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);}
+.t-img{width:100%;background:var(--beige2);position:relative;display:flex;align-items:center;justify-content:center;}
+.t-img img{width:100%;height:auto;display:block;object-fit:contain;}
+.t-img input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.t-body{padding:18px;}
+.t-stars{color:#C4934B;letter-spacing:2px;font-size:13px;margin-bottom:4px;}
+.t-name{font-size:12px;font-weight:700;color:var(--brown2);letter-spacing:1px;margin-bottom:2px;}
+.t-tag{font-size:11px;color:var(--text3);margin-bottom:10px;}
+.t-body blockquote{font-size:13px;color:var(--text2);line-height:1.8;border-left:3px solid var(--sage-lt);padding-left:10px;font-style:italic;}
+
+/* ── ABOUT ── */
+#about{padding:var(--pad);background:white;}
+/* ── ABOUT: 兩人並列 ── */
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+@media(max-width:640px){.about-wrap{grid-template-columns:1fr;}}
+.member-card{background:var(--cream);border-radius:24px;overflow:hidden;border:1.5px solid var(--beige2);}
+.member-photo{width:100%;aspect-ratio:3/4;background:var(--beige2);cursor:pointer;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.member-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:none;}
+.member-photo input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.member-body{padding:24px 22px;}
+.member-role{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--sage2);margin-bottom:4px;}
+.member-name{font-size:20px;font-weight:800;color:var(--brown);margin-bottom:12px;}
+.member-body p{font-size:13px;color:var(--text2);line-height:1.85;margin-bottom:14px;}
+.member-ig{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--brown2);text-decoration:none;background:white;border:1px solid var(--beige2);padding:5px 12px;border-radius:20px;margin-bottom:14px;transition:opacity .2s;}
+.member-ig:hover{opacity:.75;}
+.certs{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.cert{background:var(--cream);border:1px solid var(--beige2);border-radius:20px;padding:5px 14px;font-size:12px;color:var(--brown2);font-weight:600;display:flex;align-items:center;gap:5px;}
+.cert::before{content:'✦';color:var(--gold);font-size:9px;}
+
+/* ── PLANS ── */
+#plans{padding:var(--pad);background:var(--beige);text-align:center;}
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;}
+@media(max-width:700px){.plans-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;}}
+/* 優惠區塊 */
+.promo-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px;}
+.promo-card{display:flex;align-items:center;gap:12px;background:white;border-radius:16px;padding:14px 20px;box-shadow:0 3px 14px rgba(0,0,0,.07);text-decoration:none;transition:transform .2s,box-shadow .2s;border:1.5px solid var(--beige2);}
+.promo-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.11);}
+.promo-icon{font-size:26px;flex-shrink:0;}
+.promo-card h4{font-size:13px;font-weight:700;color:var(--brown);margin-bottom:2px;}
+.promo-card p{font-size:11px;color:var(--text2);line-height:1.5;}
+.promo-tag{display:inline-block;background:var(--sage-lt);color:var(--sage2);font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px;margin-top:3px;}
+.plan{border-radius:24px;padding:32px 22px;border:2px solid var(--beige2);background:white;text-align:left;position:relative;transition:transform .2s,box-shadow .2s;}
+.plan:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.08);}
+.plan.featured{border-color:var(--sage);background:linear-gradient(145deg,#F0F5EF,#E8F0E6);}
+.feat-lbl{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--sage);color:white;font-size:11px;font-weight:700;padding:4px 16px;border-radius:20px;white-space:nowrap;letter-spacing:1px;}
+.plan-name{font-size:11px;font-weight:700;color:var(--sage2);letter-spacing:3px;margin-bottom:8px;}
+.plan-title{font-size:clamp(14px,2vw,19px);font-weight:800;color:var(--brown);margin-bottom:4px;}
+.plan-dur{font-size:12px;color:var(--text3);margin-bottom:18px;}
+.plan-price{font-size:clamp(16px,2.5vw,30px);font-weight:900;color:var(--brown);margin-bottom:3px;}
+.plan-price span{font-size:13px;font-weight:400;color:var(--text3);}
+.plan-note{font-size:11px;color:var(--text3);margin-bottom:20px;}
+.plan-features{list-style:none;border-top:1px solid var(--beige2);padding-top:18px;display:flex;flex-direction:column;gap:9px;}
+.plan-features li{font-size:clamp(11px,1.3vw,13px);color:var(--text2);display:flex;align-items:flex-start;gap:5px;line-height:1.5;}
+.plan-features li::before{content:'✓';color:var(--sage);font-weight:700;flex-shrink:0;margin-top:1px;}
+.plan-btn{display:block;margin-top:20px;text-align:center;background:var(--sage);color:white;font-size:13px;font-weight:700;padding:11px;border-radius:30px;text-decoration:none;transition:opacity .2s;}
+.plan-btn:hover{opacity:.85;}
+.plan:not(.featured) .plan-btn{background:transparent;color:var(--sage2);border:2px solid var(--sage-lt);}
+
+/* ── TRIAL ── */
+#trial{padding:var(--pad);background:linear-gradient(160deg,var(--beige),#EAE0D2);text-align:center;}
+.trial-inner{max-width:620px;margin:0 auto;}
+#trial h2{font-size:clamp(24px,4vw,36px);font-weight:900;color:var(--brown);margin-bottom:12px;}
+#trial .sub{margin-bottom:36px;}
+.cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}
+.cta{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.12);transition:transform .2s,box-shadow .2s;}
+.cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.16);}
+.cta-line{background:#06C755;color:white;}
+.cta-form{background:var(--brown);color:white;}
+.cta-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white;}
+.trial-legal{margin-top:28px;font-size:11px;color:var(--text3);background:rgba(255,255,255,.5);border-radius:12px;padding:14px 20px;line-height:1.9;}
+
+/* ── FOOTER ── */
+footer{background:var(--brown);color:rgba(255,255,255,.6);text-align:center;padding:28px 20px;font-size:12px;line-height:2.2;}
+footer a{color:rgba(255,255,255,.5);text-decoration:none;}
+
+/* ── FLOAT ── */
+.float{position:fixed;bottom:20px;right:20px;z-index:99;display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
+.fb{display:flex;align-items:center;gap:7px;padding:9px 16px;border-radius:28px;font-size:12px;font-weight:700;color:white;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.18);transition:transform .2s;}
+.fb:hover{transform:scale(1.04);}
+.fb-line{background:#06C755;}
+.fb-ig{background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);}
+
+/* ── SVG DECO ── */
+.deco-svg{position:absolute;pointer-events:none;opacity:.45;}
+
+@media(max-width:680px){
+  .hero-img{flex:0 0 100%;max-width:100%;}
+  .hero-img-box{aspect-ratio:4/3;}
+  .vs-arrow{transform:rotate(90deg);}
+  .float{bottom:12px;right:12px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">果實企業社 <span>×</span> 正念飲食顧問服務</div>
+  <a href="#trial" class="nav-cta">免費體驗 →</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <!--
+    ★ 使用說明：
+    把雙人合照存為 "hero-duo.png"，放在與此 HTML 同一個資料夾，
+    照片就會自動出現。也可以直接替換下方 src 的路徑。
+  -->
+  <img id="hero-bg" src="hero-duo2.jpg" alt="Yuting × Mr. K" onerror="this.style.display='none'">
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge">果實企業社 × 正念飲食顧問服務</div>
+      <h1 class="h1">營養師協同顧問<br><em>訂閱計畫</em></h1>
+      <p class="sub" style="color:var(--brown2);font-weight:500;">讓專業陪你走完每一段<br>飲食調理的旅程</p>
+      <div class="hero-chips">
+        <div class="chip"><span class="ci">🌿</span> 營養師全程協作</div>
+        <div class="chip"><span class="ci">📊</span> 精準份量動態調整</div>
+        <div class="chip"><span class="ci">💬</span> 顧問每日陪伴</div>
+      </div>
+      <a href="#trial" style="display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:white;font-size:14px;font-weight:700;padding:13px 28px;border-radius:50px;text-decoration:none;box-shadow:0 6px 20px rgba(90,130,85,.3);margin-top:16px;transition:opacity .2s;" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">
+        申請 7 日免費體驗 →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-icon">🌿</span>
+      <div class="stat-title">有營養師在你身邊</div>
+      <div class="stat-desc">更多專業問題即時解答<br>讓飲食調整有所依據</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-icon">⚖️</span>
+      <div class="stat-title">精準份量動態調整</div>
+      <div class="stat-desc">依你的體重與目標<br>每週滾動修正飲食配比</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-icon">🤝</span>
+      <div class="stat-title">顧問每日同理陪伴</div>
+      <div class="stat-desc">整個調理過程不孤單<br>被理解才更容易達標</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAIN POINTS: Who is this for -->
+<section id="pain">
+  <div class="container">
+    <div class="label">什麼人適合這樣的服務</div>
+    <h2 class="h2">專為想<em>改變飲食習慣</em>、<br>找回健康節奏的你</h2>
+    <div class="divline"></div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon-wrap pi-1">🚫</div>
+        <div class="pain-num">01</div>
+        <h4>購買過他牌保健食品卻沒有效果</h4>
+        <p>效果不如預期，想找出真正的關鍵所在。</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon-wrap pi-2">💬</div>
+        <div class="pain-num">02</div>
+        <h4>他牌賣家放生，沒有後續陪伴</h4>
+        <p>找不到人諮詢與調整，需要真正的專業陪伴。</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon-wrap pi-3">🌿</div>
+        <div class="pain-num">03</div>
+        <h4>不喜歡依賴保健食品</h4>
+        <p>想透過真實的飲食調整，達成健康生活目標。</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon-wrap pi-4">💉</div>
+        <div class="pain-num">04</div>
+        <h4>配合醫療療程，想同步建立飲食基底</h4>
+        <p>希望搭配正確的飲食方向，讓效果更穩固持久。</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon-wrap pi-5">🏋️</div>
+        <div class="pain-num">05</div>
+        <h4>有運動習慣但成效不如預期</h4>
+        <p>想突破停滯期，讓每一分努力都更有效率。</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon-wrap pi-6">😮‍💨</div>
+        <div class="pain-num">06</div>
+        <h4>體重卡關，情緒疲憊，快要放棄</h4>
+        <p>體重遲遲沒有變化，需要有人幫你找到突破口。</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon-wrap pi-7">🔄</div>
+        <div class="pain-num">07</div>
+        <h4>效果出來了，卻總是反彈</h4>
+        <p>常常復胖，想找出能長期維持的關鍵習慣。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how">
+  <div class="container">
+    <div class="label" style="text-align:center;display:block;">我們的服務方式</div>
+    <h2 class="h2" style="text-align:center;">不說教、不評判<br><em>每一步都有人接住你</em></h2>
+    <div class="divline" style="margin-left:auto;margin-right:auto;"></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div>
+          <h3>初始飲食評估</h3>
+          <p>填寫生活習慣問卷，Mr. K 營養師進行專業評估，顧問同步了解你的目標與目前的卡關點，讓陪跑從第一天就走在正確的方向。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div>
+          <h3>個人化飲食建議方向</h3>
+          <p>依評估給出份量參考與飲食調整方向，完全符合你的生活節奏——不是一刀切的菜單，而是真正能融入日常的彈性指引。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div>
+          <h3>每日 LINE 陪跑</h3>
+          <p>飲食記錄即時回饋，外食情境隨時提問。遇到不知道怎麼選的時候，有人陪著——不孤單，也不焦慮。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div>
+          <h3>科學飲食動態調整</h3>
+          <p>依身體回饋，Mr. K 協同調整飲食方向，讓每個階段都走在對的節奏上，沒有停滯的焦慮，只有穩穩前進的踏實感。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">5</div>
+        <div>
+          <h3>階段總結與習慣鞏固</h3>
+          <p>陪跑期間進行階段總結，讓改變看得見、記得住、帶得走——不只是這段時間的進步，而是一輩子帶著走的生活方式。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="container">
+    <div class="label">你不是不夠努力</div>
+    <h2 class="h2">現在妳不用再<em>瘋狂算熱量</em></h2>
+    <p class="sub">不節食、不挨餓，打造專屬妳的飲食習慣<br>吃得開心・調整得健康・維持一輩子</p>
+    <div class="divline"></div>
+    <div class="why-cols">
+      <div class="why-card">
+        <div class="wic">🌿</div>
+        <h4>不節食、不挨餓</h4>
+        <p>不用對自己嚴苛，飲食方向是為了讓你更舒服地生活，而不是讓你痛苦地撐過每一天。</p>
+      </div>
+      <div class="why-card">
+        <div class="wic">🔄</div>
+        <h4>不再擔心反彈</h4>
+        <p>從根本養成飲食習慣，而不是短暫的體重數字——因為帶得走的習慣，才是真正的改變。</p>
+      </div>
+      <div class="why-card">
+        <div class="wic">🍱</div>
+        <h4>外食、聚餐不再是地雷</h4>
+        <p>即時提問外食選擇，不用為了一頓飯焦慮或放棄，生活照常，節奏繼續。</p>
+      </div>
+      <div class="why-card">
+        <div class="wic">💪</div>
+        <h4>撐過心理關卡第三週</h4>
+        <p>有人陪著記錄、有人給你回饋、有人在你動搖的時候說「沒關係，繼續」——讓你真的撐得過去。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VS -->
+<section id="vs">
+  <div class="vs-inner">
+    <div class="label" style="text-align:center;display:block;">為什麼選擇陪跑服務</div>
+    <h2 class="h2" style="text-align:center;">只買一張菜單 <em>vs.</em> 完整陪跑服務</h2>
+    <div class="divline" style="margin:14px auto 0;"></div>
+    <div class="vs-wrap">
+      <div class="vs-box vs-no">
+        <div class="vs-tag">✕ 只買菜單</div>
+        <h3>不用花大把錢<br>只買一張菜單</h3>
+        <div class="vd">沒有後續調整，遇到問題找不到人</div>
+        <ul>
+          <li>效果短暫，容易反彈</li>
+          <li>外食聚餐完全不知道怎麼辦</li>
+          <li>一個人孤單撐，第三週就放棄</li>
+          <li>沒有人解答疑問與卡關</li>
+        </ul>
+      </div>
+      <div class="vs-arrow">→</div>
+      <div class="vs-box vs-yes">
+        <div class="vs-tag">✓ 完整陪跑服務</div>
+        <h3>買到<br>最完整的服務</h3>
+        <div class="vd">專屬計畫持續優化，專業團隊全程陪伴</div>
+        <ul>
+          <li>建立習慣，健康長期維持</li>
+          <li>外食情境即時提供建議</li>
+          <li>有人接住你的每個動搖時刻</li>
+          <li>營養師 + 顧問 2 對 1 服務</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE 7-DAY -->
+<section id="free">
+  <div class="container">
+    <div class="free-box">
+      <div class="label" style="text-align:center;display:block;">免費體驗</div>
+      <span class="free-gift">🎁</span>
+      <div class="free-title">提供一次<br>免費 <em>7 日</em>陪跑體驗</div>
+      <div style="margin-top:8px;" class="sub">不用綁定、不用承諾——先感受，再決定。</div>
+      <div class="free-grid">
+        <div class="fg-card">
+          <span class="fg-icon">📋</span>
+          <h4>個人化飲食調整</h4>
+          <p>根據你的生活習慣量身打造</p>
+        </div>
+        <div class="fg-card">
+          <span class="fg-icon">💬</span>
+          <h4>每日陪伴與支持</h4>
+          <p>即時解答問題，不再孤單</p>
+        </div>
+        <div class="fg-card">
+          <span class="fg-icon">📈</span>
+          <h4>數據追蹤與調整</h4>
+          <p>精準分析進度，持續優化</p>
+        </div>
+      </div>
+      <div class="team-badge">
+        2 對 1 專業服務 <span>營養師 + 顧問團隊</span>
+      </div>
+      <div class="five-icons">
+        <div class="fi"><div class="fi-icon">👥</div><p>雙專業把關</p></div>
+        <div class="fi"><div class="fi-icon">🎯</div><p>客製化計畫</p></div>
+        <div class="fi"><div class="fi-icon">🤝</div><p>長期陪伴</p></div>
+        <div class="fi"><div class="fi-icon">🏆</div><p>成效可視化</p></div>
+        <div class="fi"><div class="fi-icon">✅</div><p>高 CP 值服務</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testi">
+  <div class="container">
+    <div class="label" style="text-align:center;display:block;">學員真實陪跑過程</div>
+    <h2 class="h2" style="text-align:center;">她們說的<br>就是你想聽的那句話</h2>
+    <div class="divline" style="margin:14px auto 0;"></div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="t-img">
+          <img src="反饋/LINE_capture_740546254.450353.jpg" alt="學員回饋1">
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="t-img">
+          <img src="反饋/1782195970424.jpg" alt="學員回饋2">
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="t-img">
+          <img src="反饋/LINE_capture_741369660.071060.jpg" alt="學員回饋3">
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="t-img">
+          <img src="反饋/LINE_capture_740159374.678622.jpg" alt="學員回饋4">
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-size:11px;color:var(--text3);text-align:center;line-height:1.8;">
+      以上為學員陪跑過程中的真實文字回饋，經同意匿名使用。<br>個人體驗感受因人而異，非醫療療效承諾。
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="label">認識我們的團隊</div>
+    <div class="about-wrap">
+
+      <!-- Mr. K -->
+      <div class="member-card">
+        <div class="member-photo" id="ph-mrk">
+          <img alt="Mr. K 營養師" src="mrk/LINE_NOTE_260623_1.jpg" style="display:block;">
+        </div>
+        <div class="member-body">
+          <div class="member-role">國考營養師</div>
+          <div class="member-name">Mr. K 營養師</div>
+          <p>中華民國營養師執照。專注於體重管理與飲食行為調整，相信最好的飲食計畫，是你真的能長期做到的那個。每一位學員的生活節奏不同，才需要動態陪伴，而不是複製同一份菜單。</p>
+          <a href="https://www.instagram.com/mr.k.for.dietitian" class="member-ig" target="_blank">
+            📸 @mr.k.for.dietitian
+          </a>
+          <div class="certs">
+            <span class="cert">中華民國營養師執照</span>
+            <span class="cert">體重管理專科</span>
+            <span class="cert">飲食行為調整</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Yuting -->
+      <div class="member-card">
+        <div class="member-photo" id="ph-yuting">
+          <img alt="鄭宇庭 Yuting" src="yuting/6B0A3642.jpg" style="display:block;">
+        </div>
+        <div class="member-body">
+          <div class="member-role">飲食顧問</div>
+          <div class="member-name">鄭宇庭 Yuting</div>
+          <p>產後半年成功調理 30 公斤的二寶媽。那段旅程讓我深刻體會到——改變身體狀態，靠的不是嚴苛的菜單，而是一個真正陪你走過每個困境的人。目前已協助超過百位客戶完成飲食調理與長期維持。</p>
+          <a href="https://www.instagram.com/yuting.c_hbd?igsh=MTYzbDJ2bHBxMXF0Ng%3D%3D&utm_source=qr" class="member-ig" target="_blank">
+            📸 @yuting.c_hbd
+          </a>
+          <div class="certs">
+            <span class="cert">產後半年調理 30 公斤</span>
+            <span class="cert">協助百位客戶調理維持</span>
+            <span class="cert">瘦瘦針學員愛用顧問</span>
+            <span class="cert">國家營養師認證飲食導師</span>
+            <span class="cert">生技品牌最高位階經銷</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section id="plans">
+  <div class="container">
+    <div class="label" style="text-align:center;display:block;">服務方案</div>
+    <h2 class="h2" style="text-align:center;">選擇最適合你的<em>陪跑節奏</em></h2>
+    <div class="divline" style="margin:14px auto 28px;"></div>
+    <div class="plans-grid">
+      <div class="plan">
+        <div class="plan-name">STARTER</div>
+        <div class="plan-title">輕量陪跑</div>
+        <div class="plan-dur">4 週・適合想先感受陪跑節奏的你</div>
+        <div class="plan-price">NT$6,380 <span>/ 4 週</span></div>
+        <div class="plan-note">平均每週約 NT$1,595</div>
+        <ul class="plan-features">
+          <li>初始飲食習慣評估問卷</li>
+          <li>個人化飲食方向建議</li>
+          <li>每日 LINE 陪跑回饋</li>
+          <li>外食選擇即時建議</li>
+          <li>4 週陪跑總結報告</li>
+        </ul>
+        <a href="#trial" class="plan-btn">了解更多</a>
+      </div>
+      <div class="plan featured">
+        <div class="feat-lbl">🌿 主推方案</div>
+        <div class="plan-name">CLASSIC</div>
+        <div class="plan-title">完整陪跑</div>
+        <div class="plan-dur">12 週・最穩定建立飲食習慣的週期</div>
+        <div class="plan-price">NT$16,800 <span>/ 12 週</span></div>
+        <div class="plan-note">平均每週約 NT$1,400・最多人選擇</div>
+        <ul class="plan-features">
+          <li>初始飲食習慣深度評估</li>
+          <li>個人化飲食方向與份量建議</li>
+          <li>每日 LINE 陪跑回饋</li>
+          <li>外食 / 聚餐即時應對策略</li>
+          <li>Mr. K 營養師動態調整協同</li>
+          <li>階段總結 × 3 次</li>
+          <li>習慣鞏固計畫帶走</li>
+        </ul>
+        <a href="#trial" class="plan-btn">立即申請體驗</a>
+      </div>
+      <div class="plan">
+        <div class="plan-name">PREMIUM</div>
+        <div class="plan-title">深度陪跑</div>
+        <div class="plan-dur">24 週・讓改變真正成為生活</div>
+        <div class="plan-price">NT$32,800 <span>/ 24 週</span></div>
+        <div class="plan-note">平均每週約 NT$1,367・最划算</div>
+        <ul class="plan-features">
+          <li>完整 12 週方案全部包含</li>
+          <li>每月 1 次語音 / 視訊諮詢</li>
+          <li>進階飲食習慣分析報告</li>
+          <li>無限次外食情境即時提問</li>
+          <li>24 週完整習慣養成計畫</li>
+          <li>階段總結 × 6 次</li>
+        </ul>
+        <a href="#trial" class="plan-btn">了解更多</a>
+      </div>
+    </div>
+
+    <!-- 優惠連結 -->
+    <div class="promo-row">
+      <a href="https://guoshi.bvshop.tw/item/yuting" class="promo-card" target="_blank">
+        <span class="promo-icon">🌐</span>
+        <div>
+          <h4>加入官網會員</h4>
+          <p>立即享有專屬會員折扣</p>
+          <span class="promo-tag">折 $100</span>
+        </div>
+      </a>
+      <a href="https://line.me/R/ti/p/@155riamr" class="promo-card" target="_blank">
+        <span class="promo-icon" style="color:#06C755;">💬</span>
+        <div>
+          <h4>加入官方 LINE</h4>
+          <p>領取 NT$1,000 折價券</p>
+          <span class="promo-tag" style="background:#DCFCE7;color:#15803D;">限時領取</span>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRIAL CTA -->
+<section id="trial">
+  <div class="container">
+    <div class="trial-inner">
+      <div class="label" style="text-align:center;display:block;">7 日免費體驗申請</div>
+      <h2>準備好了嗎？<br>讓我們從第一步開始</h2>
+      <p class="sub" style="margin-top:10px;margin-bottom:36px;">7 天，感受有人陪跑是什麼感覺。<br>不用綁定、不用承諾——先體驗，再決定。</p>
+      <div class="cta-row">
+        <a href="https://line.me/R/ti/p/@155riamr" class="cta cta-line" target="_blank">
+          💬 LINE 加入諮詢
+        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9DMxUJxCMaZgGmSxeeO_kGhWwjJCTKEpPdF3z8v8bdQxQXg/viewform" class="cta cta-form" target="_blank">
+          📝 免費七日體驗申請表單
+        </a>
+        <a href="https://www.instagram.com/yuting.c_hbd?igsh=MTYzbDJ2bHBxMXF0Ng%3D%3D&utm_source=qr" class="cta cta-ig" target="_blank">
+          📸 追蹤 @yuting.c_hbd
+        </a>
+      </div>
+      <div class="trial-legal">
+        本服務提供飲食生活陪跑與諮詢建議，屬生活型態支持服務，非醫療行為。<br>
+        本服務之營養師依《營養師法》合法執業。© 2025 版權所有
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p style="font-weight:700;color:rgba(255,255,255,.85);font-size:13px;">果實企業社 × 正念飲食顧問服務</p>
+  <p>IG：<a href="https://www.instagram.com/yuting.c_hbd?igsh=MTYzbDJ2bHBxMXF0Ng%3D%3D&utm_source=qr" target="_blank">@yuting.c_hbd</a> ｜ LINE 諮詢請點右下角按鈕</p>
+  <p>本服務提供飲食生活陪跑與諮詢建議，非醫療行為。營養師依《營養師法》合法執業。</p>
+</footer>
+
+<!-- FLOAT BUTTONS -->
+<div class="float">
+  <a href="https://www.instagram.com/yuting.c_hbd?igsh=MTYzbDJ2bHBxMXF0Ng%3D%3D&utm_source=qr" class="fb fb-ig" target="_blank">📸 追蹤 IG</a>
+  <a href="https://line.me/R/ti/p/@155riamr" class="fb fb-line" target="_blank">💬 LINE 諮詢</a>
+</div>
+
+<script>
+function previewImg(input, wrapId) {
+  const wrap = document.getElementById(wrapId);
+  const img = wrap.querySelector('img');
+  const ph = wrap.querySelector('.img-placeholder');
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = e => {
+      img.src = e.target.result;
+      img.style.display = 'block';
+      if (ph) ph.style.display = 'none';
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
+  });
+});
+</script>
+</body>
+</html>

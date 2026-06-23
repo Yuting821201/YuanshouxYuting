@@ -121,7 +121,7 @@ nav{background:var(--white);border-bottom:1px solid var(--beige2);padding:0 24px
 
 /* ── PAIN ── */
 #pain{padding:var(--pad);background:white;text-align:center;}
-.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:36px;}
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px;}
 .pain-card{background:var(--cream);border-radius:16px;padding:24px 18px;text-align:left;border-left:3px solid var(--sage-lt);}
 .pain-num{font-size:11px;font-weight:700;color:var(--sage);letter-spacing:2px;margin-bottom:8px;}
 .pain-card h4{font-size:14px;font-weight:700;color:var(--brown);margin-bottom:6px;line-height:1.4;}
@@ -147,7 +147,7 @@ nav{background:var(--white);border-bottom:1px solid var(--beige2);padding:0 24px
 /* ── WHY ── */
 #why{padding:var(--pad);background:white;text-align:center;}
 .why-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px;text-align:left;}
-@media(max-width:600px){.why-cols{grid-template-columns:1fr;}}
+/* why-cols always 2 columns */
 .why-card{background:var(--cream);border-radius:16px;padding:24px 20px;}
 .why-card .wic{width:40px;height:40px;border-radius:12px;background:var(--sage-lt);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px;}
 .why-card h4{font-size:15px;font-weight:700;color:var(--brown);margin-bottom:6px;}
@@ -3001,7 +3001,7 @@ FjKelR4x9PSp261CelasBreq8U35vWl7UlK4H//Z" alt="Yuting × Mr. K" onerror="this.st
         <h4>體重卡關，情緒疲憊，快要放棄</h4>
         <p>體重遲遲沒有變化，需要有人幫你找到突破口。</p>
       </div>
-      <div class="pain-card">
+      <div class="pain-card" style="grid-column:1/-1;">
         <div class="pain-icon-wrap pi-7">🔄</div>
         <div class="pain-num">07</div>
         <h4>效果出來了，卻總是反彈</h4>
@@ -48440,6 +48440,7 @@ jf7yj/eP+Gl//Uwp/wDp8T/8qP8AxwLfL/dGh0TfL/dGh1pjfQf2x/8AEY//2Q==" style="display
           </a>
           <div class="certs">
             <span class="cert">中華民國營養師執照</span>
+            <span class="cert">營養師國考備戰平台主理人</span>
             <span class="cert">體重管理專科</span>
             <span class="cert">飲食行為調整</span>
           </div>

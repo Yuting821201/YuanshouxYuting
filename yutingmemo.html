@@ -50,6 +50,13 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
 .drawer-head h2{font-size:30px;letter-spacing:-.04em;margin-top:4px}
 .close{display:grid;place-items:center;text-decoration:none;background:rgba(255,255,255,.85);border-radius:999px;width:40px;height:40px;font-weight:900;color:#2d2930}
 .block{border-radius:26px;padding:18px;margin-bottom:14px;background:rgba(255,255,255,.66);border:1px solid rgba(255,255,255,.82)}
+.actual-order{position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(255,207,229,.72),rgba(224,213,255,.68) 52%,rgba(202,231,255,.7));border:1.5px solid rgba(255,255,255,.9);box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 18px 42px rgba(114,82,132,.18);backdrop-filter:blur(22px) saturate(145%)}
+.actual-order:before{content:"";position:absolute;width:150px;height:150px;right:-45px;top:-70px;border-radius:50%;background:rgba(255,255,255,.48);filter:blur(6px);pointer-events:none}
+.actual-order .block-label{position:relative;color:#92536f;background:rgba(255,255,255,.58);border:1px solid rgba(255,255,255,.75);border-radius:999px;padding:7px 10px;letter-spacing:.08em}
+.actual-order h3,.actual-order p{position:relative}
+.actual-order h3{font-size:21px;line-height:1.45;color:#312833}
+.actual-order p{color:#5c5260}
+.order-note{position:relative;margin-top:13px;padding:10px 12px;border-radius:16px;background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.82);color:#8d526c;font-size:13px;font-weight:900;letter-spacing:.04em}
 .block-label{display:inline-block;font-size:12px;font-weight:900;letter-spacing:.12em;color:#9b6379;margin-bottom:10px}
 .block h3{font-size:20px;letter-spacing:-.03em;margin-bottom:8px}
 .block p{font-size:14px;line-height:1.75;color:#625d64}
@@ -809,21 +816,11 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>清湯鍋底＋雞胸、去皮雞腿、豬里肌、板腱牛或海鮮＋菜盤＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：昆布／蔬菜湯＋雞胸、去皮雞腿、豬里肌或海鮮</h3>
-        <p>自助吧先拿兩輪蔬菜、菇類和豆腐；肉選一種吃足，白飯半碗。丸餃、炸物、冰淇淋不續拿。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>雞胸肉盤／豬里肌肉盤／海鮮盤＋蔬菜盤＋白飯半碗</h3>
+        <p>丸餃等加工品不列入，肉類、海鮮、豆腐與原型蔬菜為主。</p>
+        <div class="order-note">備註｜火鍋料換菜</div>
       </div>
 
       <div class="block">
@@ -862,21 +859,11 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>清湯鍋底＋雞胸、去皮雞腿、豬里肌、板腱牛或海鮮＋菜盤＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：涮涮鍋＋上選豬、雞腿或海鮮</h3>
-        <p>菜盤吃完，醬料用蔥、蘿蔔泥、醬油和醋；沙茶不超過半匙。白飯半碗，冬粉與王子麵不另外加。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>上選豬肉盤／雞腿肉盤／海鮮盤＋菜盤＋白飯半碗</h3>
+        <p>水餃、冬粉與王子麵不另外加。</p>
+        <div class="order-note">備註｜火鍋料換菜</div>
       </div>
 
       <div class="block">
@@ -915,21 +902,11 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：青花椒鍋＋雞腿肉、海鮮、豆腐和蔬菜</h3>
-        <p>麻辣湯只涮料不喝湯；先吃蔬菜與蛋白質。油條、寬粉、丸餃少拿，白飯最多半碗。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>雞腿肉盤＋海鮮盤＋豆腐＋蔬菜＋白飯半碗</h3>
+        <p>油條、寬粉與丸餃不列入。</p>
+        <div class="order-note">備註｜火鍋料換菜</div>
       </div>
 
       <div class="block">
@@ -968,21 +945,11 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：原味／昆布系個人鍋＋雞肉或豬里肌</h3>
-        <p>保留完整菜量，主食選白飯半份；不要同時吃飯、冬粉和王子麵。湯喝幾口即可。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>雞肉盤／豬里肌肉盤＋完整菜盤＋白飯半份</h3>
+        <p>冬粉與王子麵不另外加。</p>
+        <div class="order-note">備註｜火鍋料換菜</div>
       </div>
 
       <div class="block">
@@ -1021,21 +988,11 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>清湯鍋底＋雞胸、去皮雞腿、豬里肌、板腱牛或海鮮＋菜盤＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：昆布湯底，先吃雞肉、海鮮與蔬菜</h3>
-        <p>和牛保留兩到三盤慢慢吃，不把高油花肉當主力；壽司、咖哩飯、麵與甜點只選一樣少量。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>雞肉盤＋海鮮盤＋蔬菜＋和牛赤身兩盤</h3>
+        <p>壽司與咖哩飯只選一種少量。</p>
+        <div class="order-note">備註｜火鍋料換菜</div>
       </div>
 
       <div class="block">
@@ -1074,21 +1031,11 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>清湯鍋底＋雞胸、去皮雞腿、豬里肌、板腱牛或海鮮＋菜盤＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：剝皮辣椒雞／清湯系鍋物＋蔬菜</h3>
-        <p>雞肉去皮，菜盤吃完，飯半碗。濃厚台味湯底少喝，火鍋料與沙茶減量。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>雞腿肉盤＋蔬菜盤＋豆腐＋白飯半碗</h3>
+        <p>加工丸餃與冰品不列入。</p>
+        <div class="order-note">備註｜火鍋料換菜</div>
       </div>
 
       <div class="block">
@@ -1127,21 +1074,11 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>清湯鍋底＋雞胸、去皮雞腿、豬里肌、板腱牛或海鮮＋菜盤＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：清湯搭麻辣湯＋海鮮、雞肉、瘦牛和青菜</h3>
-        <p>麻辣鍋的鴨血、豆腐可以吃，油條、滷肉飯、冰品與含糖飲不續拿；高油花和牛控制兩盤。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>海鮮盤＋雞肉盤＋瘦牛肉盤＋青菜＋豆腐</h3>
+        <p>高油花和牛控制兩盤，油條與加工丸餃不列入。</p>
+        <div class="order-note">備註｜火鍋料換菜</div>
       </div>
 
       <div class="block">
@@ -1180,21 +1117,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：菜單中的海鮮、雞肉或菲力類主餐</h3>
-        <p>麵包吃半份，濃湯與甜點擇一；醬汁另外放。若點招牌牛小排，去明顯油脂並把澱粉配菜減半。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>菲力牛排／海鮮主餐＋生菜＋烤蔬菜</h3>
+        <p>麵包半份，主餐保留原味。</p>
       </div>
 
       <div class="block">
@@ -1233,21 +1159,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：原塊牛排、雞肉或海鮮主餐</h3>
-        <p>沙拉醬另外放，麵包半份；避開酥皮、油炸前菜與雙醬。甜點吃幾口，飲料選無糖。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>原塊牛排／雞肉主餐／海鮮主餐＋生菜</h3>
+        <p>麵包半份，飲料選無糖。</p>
       </div>
 
       <div class="block">
@@ -1286,21 +1201,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：雞肉、牛肉或魚類主餐，醬汁減量</h3>
-        <p>前菜與沙拉正常吃，炊飯半份；炸物配菜去皮或少吃，甜點與含糖飲二選一。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>雞肉主餐／牛肉主餐／魚類主餐＋生菜＋炊飯半份</h3>
+        <p>主餐保留原味，含糖飲不列入。</p>
       </div>
 
       <div class="block">
@@ -1339,21 +1243,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：岩板牛肉、雞肉或鮮魚套餐</h3>
-        <p>飯與麵只選一種半份，醬料薄沾；炸物、甜點少量，把生菜與海鮮留作主要配菜。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>岩板牛肉／雞肉／鮮魚套餐＋生菜</h3>
+        <p>飯或麵選一種半份。</p>
       </div>
 
       <div class="block">
@@ -1392,21 +1285,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>烤肉以瘦肉/海鮮為主＋生菜包肉＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：雞腿、海鮮、牛舌或較瘦的牛豬拼盤</h3>
-        <p>用生菜包肉，燒肉醬薄沾；白飯半碗。五花、培根牛、香腸與起司類只試味道。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>雞腿肉＋海鮮＋牛舌＋生菜＋白飯半碗</h3>
+        <p>五花肉、培根牛與香腸不列入。</p>
       </div>
 
       <div class="block">
@@ -1445,21 +1327,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>香煎雞腿排義大利麵／番茄海鮮義大利麵</h3>
-        <p>品牌目前已非穩定營運；此為既有菜單餐點名稱。麵吃半份、雞腿去皮，白醬與炸物不加。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>番茄海鮮義大利麵半份＋生菜</h3>
+        <p>品牌目前非穩定營運，此為既有菜單餐點名稱。</p>
       </div>
 
       <div class="block">
@@ -1498,21 +1369,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>烤肉以瘦肉/海鮮為主＋生菜包肉＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：海鮮、雞肉或菲力類鐵板主餐</h3>
-        <p>請少油料理，麵包與炒飯各半份或只選一種；醬汁少量，甜點不續加。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>菲力牛排／海鮮鐵板主餐＋烤蔬菜</h3>
+        <p>麵包半份，主餐請少油料理。</p>
       </div>
 
       <div class="block">
@@ -1551,21 +1411,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>香煎雞腿排＋烤時蔬＋白飯半碗</h3>
-        <p>「就饗」品牌名稱疑似誤植；先以卡片既有餐型提供具名餐點，後續應補正官方品牌名稱。</p>
+        <p>品牌名稱仍需補正。</p>
       </div>
 
       <div class="block">
@@ -1604,21 +1453,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>清蒸魚＋豆腐煲＋炒青菜</h3>
-        <p>「就享知」品牌名稱疑似誤植；飯半碗，濃醬與炸物少量，後續應補正官方品牌名稱。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>清蒸魚＋豆腐煲＋青菜＋白飯半碗</h3>
+        <p>品牌名稱仍需補正。</p>
       </div>
 
       <div class="block">
@@ -1657,21 +1495,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：腰內豬排／雞肉定食，高麗菜續加</h3>
-        <p>炸衣剝掉一部分，白飯半碗，味噌湯一碗即可；咖哩、起司、可樂餅與甜點不一起點。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>腰內豬排定食，豬排去炸衣＋高麗菜＋白飯半碗</h3>
+        <p>此品牌沒有合適的非炸主餐，去除炸衣後再吃。</p>
       </div>
 
       <div class="block">
@@ -1710,21 +1537,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>烤肉以瘦肉/海鮮為主＋生菜包肉＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>香蒜炙燒牛排／香煎鱸魚＋炒時蔬</h3>
-        <p>品牌目前已非穩定營運；此為既有菜單餐點名稱。白飯半份，黑胡椒醬與奶油少量。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>香煎鱸魚＋時蔬＋白飯半份</h3>
+        <p>品牌目前非穩定營運，此為既有菜單餐點名稱。</p>
       </div>
 
       <div class="block">
@@ -1763,21 +1579,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>香煎鱸魚＋烤雞腿排＋時蔬</h3>
-        <p>「ABU」品牌名稱疑似誤植；先以既有餐型提供具名餐點，後續應補正官方品牌名稱。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>香煎鱸魚＋時蔬＋白飯半碗</h3>
+        <p>品牌名稱仍需補正。</p>
       </div>
 
       <div class="block">
@@ -1816,21 +1621,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：清蒸／燉煮魚、蝦、豆腐和青菜</h3>
-        <p>百秒黃花魚這類魚料理可優先；莆田滷麵與炒飯多人分食、自己吃小碗，炸物與濃醬菜只夾一兩口。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>百秒黃花魚＋豆腐＋青菜＋白飯半碗</h3>
+        <p>麵飯類主食不重複。</p>
       </div>
 
       <div class="block">
@@ -1869,21 +1663,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>我會點：片皮鴨去大部分鴨皮＋兩道蔬菜</h3>
-        <p>餅皮控制一到兩張、甜麵醬薄抹；再搭豆腐或海鮮。炒飯、麵與甜點不重複點。</p>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>清蒸魚＋豆腐＋兩道蔬菜＋白飯半碗</h3>
+        <p>鴨肉品項不列入。</p>
       </div>
 
       <div class="block">
@@ -1922,21 +1705,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
         <a class="close" href="#group-0">×</a>
       </div>
 
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>豆腐/豆製品＋大量蔬菜＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
-      </div>
-
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>松露野菇炊飯半份＋烤時蔬＋豆腐</h3>
-        <p>「Su 蔬流」品牌名稱疑似誤植；澱粉半份並以豆腐補足蛋白質，後續應補正官方名稱。</p>
+        <p>品牌名稱仍需補正。</p>
       </div>
 
       <div class="block">
@@ -1976,20 +1748,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>燻雞三明治＋美式咖啡</h3>
-        <p>蛋糕與麵包不當正餐；真的想吃甜點就選一小份，搭無糖美式。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>無糖茶/美式咖啡＋蛋白質點心或沙拉</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>飲料選無糖。</p>
       </div>
 
       <div class="block">
@@ -2029,20 +1790,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>鮪魚三明治／全麥吐司＋無糖茶</h3>
-        <p>丹麥、可頌、菠蘿與奶油麵包油脂較高，一次只選一個小品項。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>原味麵包半份＋無糖飲＋另補蛋白質</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>丹麥與可頌類不列入。</p>
       </div>
 
       <div class="block">
@@ -2082,20 +1832,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>韭菜水餃 10 顆＋燙青菜＋蛋花湯</h3>
-        <p>不再加乾麵或鍋貼；醬油少量，不用辣油。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主食半份＋蛋白質加一份＋青菜加量</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>韭菜水餃 10 顆＋燙青菜</h3>
+        <p>不再加乾麵或鍋貼。</p>
       </div>
 
       <div class="block">
@@ -2135,20 +1874,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>玫瑰油雞飯＋燙青菜</h3>
-        <p>雞皮去掉、白飯吃半份；炸排骨飯與椒麻炸雞腿飯留到非減脂日。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主餐選非炸肉或炸皮減量＋飯半碗＋高麗菜加量</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>白切雞飯＋燙青菜，白飯半份</h3>
+        <p>排骨與雞腿類品項不列入。</p>
       </div>
 
       <div class="block">
@@ -2188,20 +1916,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>舒肥雞胸沙拉＋美式咖啡</h3>
-        <p>沙拉醬另外放；三明治、鬆餅與蛋糕不一起加點。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>無糖茶/美式咖啡＋蛋白質點心或沙拉</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>三明治不另外加點。</p>
       </div>
 
       <div class="block">
@@ -2241,20 +1958,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>招牌蔬食鍋貼＋燙青菜＋紫菜湯</h3>
-        <p>鍋貼控制 8–10 顆；紅燒麵與水餃不要同餐並吃。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>豆腐/豆製品＋大量蔬菜＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>招牌蔬食水餃＋燙青菜</h3>
+        <p>鍋貼控制 8–10 顆，麵與水餃不在同餐重複。</p>
       </div>
 
       <div class="block">
@@ -2294,20 +2000,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>紅燒牛肉麵，麵量減半＋燙青菜</h3>
-        <p>牛肉吃完、湯少喝；不另外加滷肉飯或小菜中的加工品。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主食半份＋蛋白質加一份＋青菜加量</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>乾拌麵半份＋滷牛腱＋燙青菜</h3>
+        <p>加工小菜不列入。</p>
       </div>
 
       <div class="block">
@@ -2347,20 +2042,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>烤雞腿便當，去皮＋飯半份</h3>
-        <p>配菜優先青菜、豆腐與蛋；炸排骨、香腸和滷汁少量。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主食半份＋蛋白質加一份＋青菜加量</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>烤雞腿便當＋飯半份＋青菜＋豆腐＋蛋</h3>
+        <p>香腸與加工配菜不列入。</p>
       </div>
 
       <div class="block">
@@ -2400,20 +2084,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>生魚片、白灼蝦、現切牛排＋兩盤蔬菜</h3>
-        <p>漢來海港先拿海鮮與蔬菜；壽司、炒飯、麵、甜點只各試少量且不續盤。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>生魚片＋白灼蝦＋現切牛排＋兩盤蔬菜</h3>
+        <p>壽司與麵飯主食只選一種少量。</p>
       </div>
 
       <div class="block">
@@ -2453,20 +2126,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>燕窩釀鳳翼＋蟹肉桂花炒魚肚＋時蔬</h3>
-        <p>脆皮叉燒包與炒飯多人分食；濃汁菜少勾芡汁。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>燕窩釀鳳翼＋蟹肉桂花魚肚＋時蔬</h3>
+        <p>港點與飯類主食少量。</p>
       </div>
 
       <div class="block">
@@ -2506,20 +2168,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>松露野菇炊飯半份＋蘿蔔絲酥餅半個＋時蔬</h3>
-        <p>豆腐與菇類補蛋白質；炸物與精緻澱粉不重複點。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>豆腐/豆製品＋大量蔬菜＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>松露野菇炊飯半份＋豆腐＋時蔬</h3>
+        <p>菇類與豆腐補足蛋白質。</p>
       </div>
 
       <div class="block">
@@ -2559,20 +2210,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>菲力牛排＋烤蔬菜</h3>
-        <p>薯條或麵包只選一種半份；黑胡椒醬另外放。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>烤肉以瘦肉/海鮮為主＋生菜包肉＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>菲力牛排＋烤蔬菜＋麵包半份</h3>
+        <p>主餐保留原味。</p>
       </div>
 
       <div class="block">
@@ -2612,20 +2252,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>絲瓜蝦仁湯包 4 顆＋燙青菜＋酸辣湯半碗</h3>
-        <p>排骨蛋炒飯多人分食，不再加其他麵飯。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>小籠包 4 顆＋燙青菜</h3>
+        <p>不再搭其他麵飯。</p>
       </div>
 
       <div class="block">
@@ -2665,20 +2294,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>脆皮雞去皮＋清蒸魚＋炒時蔬</h3>
-        <p>炒飯與港點各吃少量；叉燒、燒肉與勾芡菜不續夾。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>清蒸魚＋白切雞肉＋時蔬＋白飯半碗</h3>
+        <p>港點少量，勾芡菜不列入。</p>
       </div>
 
       <div class="block">
@@ -2718,20 +2336,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>香煎鮭魚＋烤時蔬／沙拉</h3>
-        <p>松露野菇燉飯只吃半份；麵包和甜點擇一。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>香煎鮭魚＋烤時蔬＋生菜</h3>
+        <p>松露野菇燉飯吃半份。</p>
       </div>
 
       <div class="block">
@@ -2771,20 +2378,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>白斬雞去皮＋清蒸魚＋菜脯蛋＋炒青菜</h3>
-        <p>油飯、炒米粉和甜湯少量，避免宴席每一道都吃滿。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>白切雞肉＋清蒸魚＋菜脯蛋＋青菜</h3>
+        <p>油飯與米糕少量。</p>
       </div>
 
       <div class="block">
@@ -2824,20 +2420,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>雪花牛肉鍋改選梅花豬／雞腿肉＋菜盤</h3>
-        <p>昆布湯底，白飯半碗；火鍋料、沙茶與冰品不續拿。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>清湯鍋底＋雞胸、去皮雞腿、豬里肌、板腱牛或海鮮＋菜盤＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>梅花豬肉盤／雞腿肉盤＋菜盤＋白飯半碗</h3>
+        <p>加工丸餃與冰品不列入。</p>
+        <div class="order-note">備註｜火鍋料換菜</div>
       </div>
 
       <div class="block">
@@ -2877,20 +2463,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>壺漬牛肋條＋雞腿肉＋櫛瓜</h3>
-        <p>白飯半碗，燒肉醬薄沾；牛五花與豬五花只吃少量。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>壺漬牛肋條＋雞腿肉＋櫛瓜＋白飯半碗</h3>
+        <p>牛五花與豬五花不列入。</p>
       </div>
 
       <div class="block">
@@ -2930,20 +2505,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>牛五花套餐改選雞腿肉套餐＋蔬菜盤</h3>
-        <p>飯半碗；起司、奶油與高油花肉不加點。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>烤肉以瘦肉/海鮮為主＋生菜包肉＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>雞腿肉套餐＋蔬菜盤＋白飯半碗</h3>
+        <p>牛五花與高油花肉不列入。</p>
       </div>
 
       <div class="block">
@@ -2983,20 +2547,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>剝皮辣椒雞鍋＋菜盤＋白飯半碗</h3>
-        <p>「芼公」品牌名稱疑似誤植；先以既有火鍋餐型提供具名餐點，後續應補正官方名稱。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>雞腿肉盤＋菜盤＋白飯半碗</h3>
+        <p>品牌名稱仍需補正。</p>
+        <div class="order-note">備註｜火鍋料換菜</div>
       </div>
 
       <div class="block">
@@ -3036,20 +2590,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>炙燒牛排定食／鯖魚定食＋高麗菜</h3>
-        <p>白飯半份，醬汁少量；可樂餅與炸物小菜不加點。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主食半份＋蛋白質加一份＋青菜加量</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>炙燒牛排定食／鯖魚定食＋高麗菜＋白飯半份</h3>
+        <p>可樂餅不列入。</p>
       </div>
 
       <div class="block">
@@ -3089,20 +2632,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>紅豆紅豆餅 1 個＋無糖茶</h3>
-        <p>奶油、巧克力與起司口味一次只選一個，不再搭含糖飲。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>原味麵包半份＋無糖飲＋另補蛋白質</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>目前沒有符合宇庭條件的正餐品項</h3>
+        <p>此品牌主力品項不符合排除規則。</p>
       </div>
 
       <div class="block">
@@ -3142,20 +2674,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>有之和牛：雞腿肉、海鮮、蔬菜＋和牛兩盤</h3>
-        <p>壽司、咖哩飯、拉麵與甜點只選一項少量。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>烤肉以瘦肉/海鮮為主＋生菜包肉＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>雞腿肉盤＋海鮮盤＋蔬菜＋和牛赤身兩盤</h3>
+        <p>壽司與咖哩飯只選一種少量。</p>
+        <div class="order-note">備註｜火鍋料換菜</div>
       </div>
 
       <div class="block">
@@ -3195,20 +2717,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>鹽蔥牛舌＋雞腿肉＋海鮮拼盤＋生菜</h3>
-        <p>白飯半碗；牛五花、豬五花與香腸少量。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>烤肉以瘦肉/海鮮為主＋生菜包肉＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>鹽蔥牛舌＋雞腿肉＋海鮮拼盤＋生菜＋白飯半碗</h3>
+        <p>牛五花、豬五花與香腸不列入。</p>
       </div>
 
       <div class="block">
@@ -3248,20 +2759,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>鹽烤雞腿串＋香菇串＋櫛瓜串＋烤魚</h3>
-        <p>醬燒肉串與炸串少點，茶泡飯半碗。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>茶泡飯半碗。</p>
       </div>
 
       <div class="block">
@@ -3301,20 +2801,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>鮪魚握壽司 2 盤＋鮮蝦握壽司 2 盤＋茶碗蒸</h3>
-        <p>再加味噌湯或毛豆；炙燒美乃滋、炸物與甜點少拿。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>鮭魚/鮪魚/蝦類壽司＋茶碗蒸＋味噌湯少喝</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>鮪魚握壽司 2 盤＋鮮蝦握壽司 2 盤＋茶碗蒸＋毛豆</h3>
+        <p>美乃滋炙燒品項不列入。</p>
       </div>
 
       <div class="block">
@@ -3354,20 +2843,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>清燉牛肉麵＋燙青菜</h3>
-        <p>麵吃半份、牛肉吃完、湯少喝；滷味不選百頁豆腐與甜不辣。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主食半份＋蛋白質加一份＋青菜加量</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>乾拌麵半份＋滷牛腱＋燙青菜</h3>
+        <p>百頁豆腐與加工品不列入。</p>
       </div>
 
       <div class="block">
@@ -3407,20 +2885,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>義式烤雞＋小披薩 2 片＋生菜</h3>
-        <p>炸雞改烤雞；濃湯、薯條與含糖飲不一起點。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主餐選烤/煎蛋白質＋飲料無糖＋薯條不加大</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>飲料選無糖。</p>
       </div>
 
       <div class="block">
@@ -3460,20 +2927,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>腰內豬排定食＋高麗菜絲</h3>
-        <p>炸衣剝掉部分，白飯半碗；可樂餅與咖哩醬不加。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主餐選非炸肉或炸皮減量＋飯半碗＋高麗菜加量</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>腰內豬排定食，豬排去炸衣＋高麗菜絲＋白飯半碗</h3>
+        <p>此品牌沒有合適的非炸主餐，去除炸衣後再吃。</p>
       </div>
 
       <div class="block">
@@ -3513,20 +2969,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>親子丼，飯減半＋燙青菜</h3>
-        <p>雞肉和蛋吃完；炸蝦丼、豬排丼與美乃滋類少選。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主食半份＋蛋白質加一份＋青菜加量</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>雞肉與蛋吃完。</p>
       </div>
 
       <div class="block">
@@ -3566,20 +3011,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>清燉牛肉麵＋燙青菜＋豆干</h3>
-        <p>麵量減半、湯少喝；斤餅與牛肉麵不在同餐重複。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>乾拌麵半份＋牛腱＋燙青菜＋豆干</h3>
+        <p>斤餅與麵不在同餐重複。</p>
       </div>
 
       <div class="block">
@@ -3619,20 +3053,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>瑪格麗特披薩 2 片＋烤雞沙拉</h3>
-        <p>白醬義大利麵、炸物與甜點不一起點。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>義大利麵不另外加點。</p>
       </div>
 
       <div class="block">
@@ -3672,20 +3095,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>三商炸雞：雞腿 1 支去皮＋玉米／沙拉</h3>
-        <p>薯條、雞塊與含糖飲不加點；炸雞當偶爾的一餐。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主餐選烤/煎蛋白質＋飲料無糖＋薯條不加大</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>炸雞腿去皮＋玉米＋生菜</h3>
+        <p>此品牌沒有合適的非炸主餐，雞皮與外層炸衣去除後再吃。</p>
       </div>
 
       <div class="block">
@@ -3725,20 +3137,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>清燉牛肉麵＋燙青菜</h3>
-        <p>麵半份、牛肉吃完；牛肉燥飯與小菜不重複加。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主食半份＋蛋白質加一份＋青菜加量</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>乾拌麵半份＋滷牛腱＋燙青菜</h3>
+        <p>牛肉燥飯不另外加。</p>
       </div>
 
       <div class="block">
@@ -3778,20 +3179,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>鹽蔥牛舌＋澳洲和牛赤身＋雞腿肉＋生菜</h3>
-        <p>白飯半碗；牛五花與醬燒肉少量。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>烤肉以瘦肉/海鮮為主＋生菜包肉＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>鹽蔥牛舌＋澳洲和牛赤身＋雞腿肉＋生菜＋白飯半碗</h3>
+        <p>牛五花不列入。</p>
       </div>
 
       <div class="block">
@@ -3831,20 +3221,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>日本和牛赤身＋海鮮＋釜飯半碗</h3>
-        <p>選赤身部位，霜降和牛控制份量；甜點不續點。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>烤肉以瘦肉/海鮮為主＋生菜包肉＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>霜降和牛控制份量。</p>
       </div>
 
       <div class="block">
@@ -3884,20 +3263,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>和牛 47 套餐中的赤身和牛、海鮮與蔬菜料理</h3>
-        <p>高油花和牛品項只品嘗，飯與甜點吃半份。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>烤肉以瘦肉/海鮮為主＋生菜包肉＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>和牛赤身＋海鮮＋蔬菜＋白飯半碗</h3>
+        <p>高油花和牛不列入。</p>
       </div>
 
       <div class="block">
@@ -3937,20 +3305,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>博多風水炊鍋／涮涮鍋＋雞肉與蔬菜</h3>
-        <p>雜炊或烏龍麵只吃半份；胡麻醬少量。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>清湯鍋底＋雞胸、去皮雞腿、豬里肌、板腱牛或海鮮＋菜盤＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>雞肉＋蔬菜＋白飯半碗</h3>
+        <p>烏龍麵不另外加。</p>
+        <div class="order-note">備註｜火鍋料換菜</div>
       </div>
 
       <div class="block">
@@ -3990,20 +3348,10 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>和牛麻辣鍋：赤身和牛＋豆腐＋蔬菜</h3>
-        <p>麻辣湯不喝，油條與寬粉少量；高油花和牛不續盤。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>清湯鍋底＋雞胸、去皮雞腿、豬里肌、板腱牛或海鮮＋菜盤＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>和牛赤身＋豆腐＋蔬菜＋白飯半碗</h3>
+        <p>油條與寬粉不列入。</p>
+        <div class="order-note">備註｜火鍋料換菜</div>
       </div>
 
       <div class="block">
@@ -4043,20 +3391,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>和牛牛丼，飯減半＋溫泉蛋＋沙拉</h3>
-        <p>選赤身和牛；炸物與可樂餅不加點。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>烤肉以瘦肉/海鮮為主＋生菜包肉＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>選赤身和牛。</p>
       </div>
 
       <div class="block">
@@ -4096,20 +3433,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>清蒸檸檬魚＋綠咖哩椰汁雞＋蝦醬高麗菜</h3>
-        <p>白飯半碗；月亮蝦餅只吃一小塊。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主菜選海鮮/豆腐/雞肉＋飯半碗＋青菜類</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>清蒸檸檬魚＋綠咖哩椰汁雞＋高麗菜＋白飯半碗</h3>
+        <p>月亮蝦餅不列入。</p>
       </div>
 
       <div class="block">
@@ -4149,20 +3475,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>檸檬清蒸魚＋打拋雞／豬＋炒高麗菜</h3>
-        <p>白飯半碗；椒麻雞與月亮蝦餅少量。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主菜選海鮮/豆腐/雞肉＋飯半碗＋青菜類</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>檸檬清蒸魚＋打拋雞／豬＋高麗菜＋白飯半碗</h3>
+        <p>月亮蝦餅不列入。</p>
       </div>
 
       <div class="block">
@@ -4202,20 +3517,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>清燉越南牛肉河粉／酸辣番茄豬肉麵</h3>
-        <p>麵量減半，加燙青菜；炸雞翅與蝦餅不加點。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主食半份＋蛋白質加一份＋青菜加量</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>乾拌河粉半份＋牛肉＋燙青菜</h3>
+        <p>雞翅與蝦餅不列入。</p>
       </div>
 
       <div class="block">
@@ -4255,20 +3559,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>松子年糕牛肉＋醋溜土豆絲＋炒青菜</h3>
-        <p>神仙孜然肋排只吃一兩塊；白飯半碗。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主菜選海鮮/豆腐/雞肉＋飯半碗＋青菜類</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>松子年糕牛肉＋醋溜土豆絲＋青菜＋白飯半碗</h3>
+        <p>肋排只吃一兩塊。</p>
       </div>
 
       <div class="block">
@@ -4308,20 +3601,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>剝皮辣椒雞湯＋清炒水蓮＋ 3.5 杯雞</h3>
-        <p>白飯半碗；金沙、糖醋與炸物類少選。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>3.5 杯雞＋清炒水蓮＋白飯半碗</h3>
+        <p>金沙與糖醋類品項不列入。</p>
       </div>
 
       <div class="block">
@@ -4361,20 +3643,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>海南雞飯，雞肉去皮、飯半份＋青菜</h3>
-        <p>仁當牛肉與椰漿咖哩醬少量，不加炸物。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主菜選海鮮/豆腐/雞肉＋飯半碗＋青菜類</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>海南雞飯，雞肉取肉、飯半份＋青菜</h3>
+        <p>仁當牛肉不另外加。</p>
       </div>
 
       <div class="block">
@@ -4414,20 +3685,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>韓式嫩豆腐鍋＋烤牛肉＋生菜</h3>
-        <p>白飯半碗；韓式炸雞、起司與年糕少量。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主菜選海鮮/豆腐/雞肉＋飯半碗＋青菜類</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>韓式烤牛肉＋生菜＋豆腐＋白飯半碗</h3>
+        <p>年糕與起司料理不列入。</p>
       </div>
 
       <div class="block">
@@ -4467,20 +3727,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>酪梨雞肉沙拉＋烤雞蛋捲</h3>
-        <p>薯餅、鬆餅與法式吐司不一起點；咖啡無糖。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>酪梨雞肉沙拉＋烤雞蛋捲＋美式咖啡</h3>
+        <p>薯餅、鬆餅與法式吐司不列入。</p>
       </div>
 
       <div class="block">
@@ -4520,20 +3769,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>海南雞飯，雞肉去皮、飯半份＋青菜</h3>
-        <p>「SHANN SHANN」品牌資料待補正；先以既有南洋餐型提供具名餐點。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>海南雞飯，雞肉取肉、飯半份＋青菜</h3>
+        <p>品牌資料仍需補正。</p>
       </div>
 
       <div class="block">
@@ -4573,20 +3811,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>檸檬清蒸魚＋打拋雞＋炒蔬菜</h3>
-        <p>白飯半碗；月亮蝦餅、椒麻炸雞少量。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主菜選海鮮/豆腐/雞肉＋飯半碗＋青菜類</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>檸檬清蒸魚＋打拋雞＋蔬菜＋白飯半碗</h3>
+        <p>月亮蝦餅不列入。</p>
       </div>
 
       <div class="block">
@@ -4626,20 +3853,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>無糖四季春青茶／無糖烏龍茶</h3>
-        <p>不加珍珠、椰果、奶蓋與糖漿；想喝奶茶選小杯無糖鮮奶茶。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>無糖茶/美式咖啡＋蛋白質點心或沙拉</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>不額外加料。</p>
       </div>
 
       <div class="block">
@@ -4679,20 +3895,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>腰內豬排套餐＋高麗菜絲</h3>
-        <p>炸衣剝掉部分、飯半碗；里肌豬排與咖哩醬較油。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主餐選非炸肉或炸皮減量＋飯半碗＋高麗菜加量</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>腰內豬排套餐，豬排去炸衣＋高麗菜絲＋白飯半碗</h3>
+        <p>此品牌沒有合適的非炸主餐，去除炸衣後再吃。</p>
       </div>
 
       <div class="block">
@@ -4732,20 +3937,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>清燉牛肉麵＋燙青菜</h3>
-        <p>麵半份、牛肉吃完、湯少喝；蒜味與紅燒湯頭控制喝湯量。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主食半份＋蛋白質加一份＋青菜加量</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>乾拌麵半份＋滷牛腱＋燙青菜</h3>
+        <p>不另外加其他麵飯。</p>
       </div>
 
       <div class="block">
@@ -4785,20 +3979,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>元祖燒餃子 6 顆＋炒青菜＋蛋花湯</h3>
-        <p>天津飯或炒飯只吃半份，不再加拉麵。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>元祖燒餃子 6 顆＋青菜</h3>
+        <p>天津飯與拉麵不另外加。</p>
       </div>
 
       <div class="block">
@@ -4838,20 +4021,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>元祖炸牛排套餐，選菲力／牛舌，飯半份</h3>
-        <p>炸衣剝掉部分，醬汁薄沾；不加炸物配菜。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>元祖牛菲力炸牛排，去炸衣＋高麗菜＋白飯半碗</h3>
+        <p>此品牌沒有合適的非炸主餐，去除炸衣後再吃。</p>
       </div>
 
       <div class="block">
@@ -4891,20 +4063,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>原味布丁蛋糕 1 小片＋無糖茶</h3>
-        <p>不把蛋糕當正餐，不搭奶茶或其他甜點。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>原味麵包半份＋無糖飲＋另補蛋白質</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>目前沒有符合宇庭條件的正餐品項</h3>
+        <p>此品牌主力品項不符合排除規則。</p>
       </div>
 
       <div class="block">
@@ -4944,20 +4105,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>雞肉飯半碗＋燙青菜＋茶葉蛋＋無糖茶</h3>
-        <p>鍋燒意麵、珍珠奶茶與炸物不一起點。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>無糖茶/美式咖啡＋蛋白質點心或沙拉</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>鍋燒意麵與珍珠奶茶不另外加。</p>
       </div>
 
       <div class="block">
@@ -4997,20 +4147,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>海鮮嫩豆腐煲＋韓式烤牛肉＋生菜</h3>
-        <p>白飯半碗；起司煲、煎餅與炸雞少量。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主菜選海鮮/豆腐/雞肉＋飯半碗＋青菜類</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>韓式烤牛肉＋生菜＋豆腐＋白飯半碗</h3>
+        <p>起司與煎餅不列入。</p>
       </div>
 
       <div class="block">
@@ -5050,20 +4189,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>牛肉嫩豆腐煲＋鐵拌飯半份</h3>
-        <p>小菜以蔬菜為主；起司、炸雞與年糕少點。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主菜選海鮮/豆腐/雞肉＋飯半碗＋青菜類</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>牛肉豆腐煲＋鐵拌飯半份＋蔬菜小菜</h3>
+        <p>起司與年糕不列入。</p>
       </div>
 
       <div class="block">
@@ -5103,20 +4231,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>海鮮豆腐鍋＋韓式烤肉＋生菜</h3>
-        <p>白飯半碗；辣炒年糕和炸物不加。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主菜選海鮮/豆腐/雞肉＋飯半碗＋青菜類</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>韓式烤肉＋生菜＋豆腐＋白飯半碗</h3>
+        <p>年糕不列入。</p>
       </div>
 
       <div class="block">
@@ -5156,20 +4273,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>韓式烤牛肉＋生菜盤＋海鮮煎餅一小塊</h3>
-        <p>五花肉與起司料理少量，白飯半碗。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主菜選海鮮/豆腐/雞肉＋飯半碗＋青菜類</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>韓式烤牛肉＋生菜盤＋白飯半碗</h3>
+        <p>五花肉、起司料理與煎餅不列入。</p>
       </div>
 
       <div class="block">
@@ -5209,20 +4315,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>打拋豬＋泰式炒空心菜＋冬蔭功海鮮湯</h3>
-        <p>帕泰與金錢蝦餅多人分食，白飯半碗。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主菜選海鮮/豆腐/雞肉＋飯半碗＋青菜類</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>打拋豬＋泰式空心菜＋白飯半碗</h3>
+        <p>帕泰與金錢蝦餅不列入。</p>
       </div>
 
       <div class="block">
@@ -5262,20 +4357,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>烤腿排三明治／低脂鮮蔬三明治＋美式咖啡</h3>
-        <p>不加糖漿；貝果、蛋糕與鬆餅不一起點。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>飲料選無糖。</p>
       </div>
 
       <div class="block">
@@ -5315,20 +4399,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>塩麴烤雞定食／烤鯖魚定食</h3>
-        <p>飯半份，味噌湯一碗；炸物小菜不加。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>塩麴烤雞定食／烤鯖魚定食＋飯半份</h3>
+        <p>加工小菜不列入。</p>
       </div>
 
       <div class="block">
@@ -5368,20 +4441,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>無糖四季春／無糖烏龍茶</h3>
-        <p>奶蓋、珍珠與糖漿不加；甜點只吃一小份。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>不額外加料。</p>
       </div>
 
       <div class="block">
@@ -5421,20 +4483,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>菲力牛排＋烤時蔬</h3>
-        <p>麵包或薯類只選一種半份；醬汁另外放。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>烤肉以瘦肉/海鮮為主＋生菜包肉＋飯半碗</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>菲力牛排＋烤時蔬＋麵包半份</h3>
+        <p>主餐保留原味。</p>
       </div>
 
       <div class="block">
@@ -5474,20 +4525,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>小華堡去美乃滋＋生菜加量</h3>
-        <p>薯條換沙拉或不點，飲料選無糖；雙層華堡與炸雞堡少選。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主餐選烤/煎蛋白質＋飲料無糖＋薯條不加大</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>小華堡不加美乃滋＋生菜加量</h3>
+        <p>飲料選無糖，薯條不列入。</p>
       </div>
 
       <div class="block">
@@ -5527,20 +4567,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>生魚片、白灼蝦、清蒸魚＋兩盤蔬菜</h3>
-        <p>潮港城自助餐的炒飯、麵、炸物與甜點各少量且不續盤。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>生魚片＋白灼蝦＋清蒸魚＋兩盤蔬菜</h3>
+        <p>麵飯主食只選一種少量。</p>
       </div>
 
       <div class="block">
@@ -5580,20 +4609,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>小山綠茶／白霜烏龍無糖</h3>
-        <p>黑糖鹿丸、奶蓋與鮮奶茶不加糖；不額外加料。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>無糖茶/美式咖啡＋蛋白質點心或沙拉</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>不額外加料。</p>
       </div>
 
       <div class="block">
@@ -5633,20 +4651,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>無糖四季春青茶／無糖烏龍茶</h3>
-        <p>「鹿角戲」品牌資料待補正；不加奶蓋、珍珠與糖漿。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>無糖茶/美式咖啡＋蛋白質點心或沙拉</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>品牌資料仍需補正。</p>
       </div>
 
       <div class="block">
@@ -5686,20 +4693,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>好食嫩雞餐／嫩煎里肌蛋吐司＋無糖豆漿</h3>
-        <p>鐵板麵與吐司只選一種；薯餅、雞塊與奶茶不加。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>鐵板麵與吐司只選一種。</p>
       </div>
 
       <div class="block">
@@ -5739,20 +4735,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>蝦仁蛋炒飯半份＋燙青菜＋蛋花湯</h3>
-        <p>炒飯不加大、不再配麵；香腸與炸物少選。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主食半份＋蛋白質加一份＋青菜加量</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>白飯半碗＋蝦仁蒸蛋＋燙青菜</h3>
+        <p>此品牌主力飯類品項不符合排除規則。</p>
       </div>
 
       <div class="block">
@@ -5792,20 +4777,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>烤鯖魚定食／雞腿定食，飯半份</h3>
-        <p>炸物與咖哩不加；味噌湯一碗即可。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>烤鯖魚定食／雞腿定食＋飯半份</h3>
+        <p>咖哩不另外加。</p>
       </div>
 
       <div class="block">
@@ -5845,20 +4819,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>炭烤雞肉蔬菜黑醋醬定食／炭烤鯖魚定食</h3>
-        <p>五穀飯半份，醬汁少量；炸雞與豬排少選。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主食半份＋蛋白質加一份＋青菜加量</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>炭烤鯖魚定食＋五穀飯半份＋蔬菜</h3>
+        <p>主餐保留原味。</p>
       </div>
 
       <div class="block">
@@ -5898,20 +4861,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>串家物語：蝦、雞胸、香菇、櫛瓜串＋沙拉</h3>
-        <p>炸衣薄裹，每次少量；咖哩飯、烏龍麵與甜點不續拿。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>蝦、雞胸、香菇、櫛瓜串去炸衣＋生菜</h3>
+        <p>此品牌沒有合適的非炸主餐，每串去除炸衣後再吃。</p>
       </div>
 
       <div class="block">
@@ -5951,20 +4903,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>原味波堤 1 個＋美式咖啡／無糖茶</h3>
-        <p>不要一次買多種甜甜圈；巧克力與卡士達款少選。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>原味麵包半份＋無糖飲＋另補蛋白質</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>美式咖啡／無糖茶</h3>
+        <p>此品牌主力品項不符合排除規則。</p>
       </div>
 
       <div class="block">
@@ -6004,20 +4945,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>腰內豬排御膳＋高麗菜絲</h3>
-        <p>炸衣剝掉部分、飯半份；咖哩與可樂餅不加。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>主餐選非炸肉或炸皮減量＋飯半碗＋高麗菜加量</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>腰內豬排御膳，豬排去炸衣＋高麗菜絲＋白飯半碗</h3>
+        <p>此品牌沒有合適的非炸主餐，去除炸衣後再吃。</p>
       </div>
 
       <div class="block">
@@ -6057,20 +4987,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>鹽可頌 1 個＋茶葉蛋／無糖豆漿</h3>
-        <p>明太子法國與甜麵包一次只吃半份，不搭含糖飲。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>茶葉蛋＋無糖豆漿</h3>
+        <p>麵包類只作少量主食。</p>
       </div>
 
       <div class="block">
@@ -6110,20 +5029,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>鮮蝦雲吞麵，麵半份＋白灼時蔬</h3>
-        <p>菠蘿油與西多士多人分食；奶茶無糖或不點。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>無糖茶/美式咖啡＋蛋白質點心或沙拉</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>鮮蝦雲吞乾麵半份＋白灼時蔬</h3>
+        <p>菠蘿油與西多士不列入。</p>
       </div>
 
       <div class="block">
@@ -6163,20 +5071,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>香草烤雞腿＋生菜沙拉</h3>
-        <p>雞皮去掉，玉米或飯少量；炸雞與薯條不加。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>香草烤雞腿肉＋生菜沙拉＋玉米</h3>
+        <p>薯條不列入。</p>
       </div>
 
       <div class="block">
@@ -6216,20 +5113,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>燻鮭魚三明治／雞肉沙拉＋ 1837 Black Tea 無糖</h3>
-        <p>司康只吃半個且少抹奶油與果醬。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>無糖茶/美式咖啡＋蛋白質點心或沙拉</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>燻鮭魚三明治／雞肉沙拉＋1837 Black Tea 無糖</h3>
+        <p>司康不列入。</p>
       </div>
 
       <div class="block">
@@ -6269,20 +5155,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>香煎鮭魚／烤雞＋時蔬</h3>
-        <p>義大利麵或燉飯吃半份；麵包與甜點擇一。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>香煎鮭魚／烤雞＋時蔬＋義大利麵半份</h3>
+        <p>麵包不另外加。</p>
       </div>
 
       <div class="block">
@@ -6322,20 +5197,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>烤雞凱薩沙拉＋海鮮番茄義大利麵半份</h3>
-        <p>白醬、炸物與披薩不一起點；醬汁另外放。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>烤雞生菜沙拉＋海鮮番茄義大利麵半份</h3>
+        <p>披薩不另外加。</p>
       </div>
 
       <div class="block">
@@ -6375,20 +5239,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>宴席選清蒸魚、白斬雞去皮、蝦與炒青菜</h3>
-        <p>油飯、米糕、炸物與甜湯各吃一兩口即可。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>清蒸魚＋白切雞肉＋蝦＋青菜＋白飯半碗</h3>
+        <p>油飯與米糕少量。</p>
       </div>
 
       <div class="block">
@@ -6428,20 +5281,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
-        <h3>味噌銀鱈魚＋綜合生魚片＋烤蘆筍</h3>
-        <p>握壽司 2–3 貫；天婦羅、和牛與甜點少量。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>蛋白質優先＋蔬菜加量＋澱粉半份</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <span class="block-label">宇庭都是這樣吃</span>
+        <h3>味噌銀鱈魚＋綜合生魚片＋烤蘆筍＋握壽司 2–3 貫</h3>
+        <p>天婦羅不列入。</p>
       </div>
 
       <div class="block">
@@ -6481,20 +5323,9 @@ body:has(.group-section:target)::after,body:has(.drawer:target)::after{content:"
       </div>
 
       <div class="block actual-order">
-        <span class="block-label">依現有菜單｜宇庭實際點法</span>
+        <span class="block-label">宇庭都是這樣吃</span>
         <h3>燻鮭魚沙拉／雞肉三明治＋英式紅茶無糖</h3>
-        <p>司康吃半個，凝脂奶油和果醬薄抹。</p>
-      </div>
-
-      <div class="block">
-        <span class="block-label">宇庭會這樣吃</span>
-        <h3>無糖茶/美式咖啡＋蛋白質點心或沙拉</h3>
-        <p>澱粉、蛋白質、蔬菜都要有。不是不吃澱粉，而是控制份量；不是只吃菜，而是蛋白質要夠。</p>
-        <div class="plate">
-          <div><b>澱粉</b><span>半份</span></div>
-          <div><b>蛋白質</b><span>優先吃</span></div>
-          <div><b>蔬菜</b><span>加量</span></div>
-        </div>
+        <p>司康不列入。</p>
       </div>
 
       <div class="block">

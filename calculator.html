@@ -1409,6 +1409,56 @@
     margin: 0 auto 18px;
   }
 
+  /* 指名顧問 複製框 */
+  .copy-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1.5px dashed var(--caramel);
+    border-radius: 14px;
+    padding: 18px 16px;
+    margin: 20px 0 4px;
+  }
+  .copy-box-text {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--cocoa);
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+  .copy-btn {
+    flex-shrink: 0;
+    padding: 9px 20px;
+    border-radius: 999px;
+    border: 1.5px solid var(--caramel);
+    background: var(--cream-soft);
+    color: var(--caramel-deep);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .copy-btn:hover { background: var(--butter); }
+  .copy-btn.copied {
+    background: var(--leaf);
+    border-color: var(--leaf);
+    color: white;
+  }
+  .copy-hint {
+    font-size: 11px;
+    color: var(--cocoa);
+    opacity: 0.55;
+    margin-top: 10px;
+    font-style: italic;
+    font-family: 'Fraunces', serif;
+  }
+
   /* ========== HIDDEN CAPTURE CARDS (用於截圖) ========== */
   .capture-card {
     position: absolute;
@@ -2672,17 +2722,25 @@
     </div>
   </div>
 
-  <!-- 彈窗:官方 LINE 說明 -->
+  <!-- 彈窗:傳送完成 + 官方 LINE 說明 -->
   <div class="modal-overlay" id="lineModal">
     <div class="modal-card">
       <button type="button" class="modal-close" onclick="closeLineModal()">✕</button>
       <div class="modal-icon">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.89c.50 0 .906.41.906.91s-.41.906-.906.906h-2.422v1.516h2.422c.5 0 .906.41.906.906 0 .5-.41.906-.906.906h-3.328c-.5 0-.906-.41-.906-.906V7.625c0-.5.41-.906.906-.906h3.328c.5 0 .906.41.906.906 0 .5-.41.906-.906.906h-2.422V9.89h2.422zm-5.604 4.235c0 .39-.25.736-.62.86-.094.03-.19.046-.281.046-.297 0-.578-.14-.756-.376l-3.408-4.642v4.117c0 .5-.406.906-.906.906s-.906-.41-.906-.906V7.625c0-.39.25-.735.621-.86.093-.034.19-.045.28-.045.282 0 .563.14.741.375L12.95 11.74V7.625c0-.5.41-.906.906-.906s.906.41.906.906v6.5zm-7.834 0c0 .5-.41.906-.906.906s-.906-.41-.906-.906V7.625c0-.5.41-.906.906-.906s.906.41.906.906v6.5zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.39.082.92.258 1.054.591.12.302.079.766.04 1.082l-.169 1.027c-.045.302-.243 1.193 1.05.65 1.293-.546 6.964-4.108 9.5-7.029h-.001C23.281 14.39 24 12.444 24 10.314z"/></svg>
       </div>
-      <h3 class="modal-title">官方 LINE</h3>
-      <p class="modal-text">請小編開群組 ♡<br>加入好友後跟小編說一聲,<br>我們會盡快為你開立專屬諮詢群組。</p>
-      <div style="margin-top: 22px;">
-        <a href="https://lin.ee/RHvMVFJ" target="_blank" rel="noopener" class="social-btn line" style="justify-content:center;">
+      <h3 class="modal-title">資料已送出 ♡</h3>
+      <p class="modal-text">加入官方 LINE 好友後,<br>請將下方文字貼給小編,<br>我們會盡快為你開立專屬諮詢群組。</p>
+
+      <div class="copy-box">
+        <span class="copy-box-text" id="copy-consultant-text">已填寫宇庭顧問的表單</span>
+        <button type="button" class="copy-btn" id="copy-consultant-btn" onclick="copyConsultantName()">複製文字</button>
+      </div>
+      <div class="copy-hint">加好友後直接貼上,小編就知道是你囉</div>
+
+      <div style="margin-top: 20px;">
+        <a href="https://line.me/R/ti/p/@155riamr" target="_blank" rel="noopener" class="social-btn line" style="justify-content:center; width:100%;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.89c.50 0 .906.41.906.91s-.41.906-.906.906h-2.422v1.516h2.422c.5 0 .906.41.906.906 0 .5-.41.906-.906.906h-3.328c-.5 0-.906-.41-.906-.906V7.625c0-.5.41-.906.906-.906h3.328c.5 0 .906.41.906.906 0 .5-.41.906-.906.906h-2.422V9.89h2.422zm-5.604 4.235c0 .39-.25.736-.62.86-.094.03-.19.046-.281.046-.297 0-.578-.14-.756-.376l-3.408-4.642v4.117c0 .5-.406.906-.906.906s-.906-.41-.906-.906V7.625c0-.39.25-.735.621-.86.093-.034.19-.045.28-.045.282 0 .563.14.741.375L12.95 11.74V7.625c0-.5.41-.906.906-.906s.906.41.906.906v6.5zm-7.834 0c0 .5-.41.906-.906.906s-.906-.41-.906-.906V7.625c0-.5.41-.906.906-.906s.906.41.906.906v6.5zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.39.082.92.258 1.054.591.12.302.079.766.04 1.082l-.169 1.027c-.045.302-.243 1.193 1.05.65 1.293-.546 6.964-4.108 9.5-7.029h-.001C23.281 14.39 24 12.444 24 10.314z"/></svg>
           前往加入官方 LINE
         </a>
       </div>
@@ -3278,6 +3336,37 @@
     document.getElementById('pill-3').classList.add('active');
     document.getElementById('pill-2').classList.remove('active');
     document.getElementById('pill-2').classList.add('done');
+    setTimeout(openLineModal, 350);
+  }
+
+  // ===== 複製「已填寫宇庭顧問的表單」 =====
+  function copyConsultantName() {
+    const text = document.getElementById('copy-consultant-text').textContent;
+    const btn = document.getElementById('copy-consultant-btn');
+    const done = () => {
+      const original = btn.textContent;
+      btn.textContent = '已複製 ✓';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('copied');
+      }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+    } else {
+      fallbackCopy(text, done);
+    }
+  }
+  function fallbackCopy(text, done) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (e) {}
+    document.body.removeChild(ta);
   }
 
   function downloadImage(dataUrl, filename) {

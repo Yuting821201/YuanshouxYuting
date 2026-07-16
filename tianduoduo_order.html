@@ -988,6 +988,7 @@
   const paymentModal = document.getElementById('payment-modal');
   const submitBtn = document.getElementById('submit-order-btn');
   const submitStatus = document.getElementById('submit-status');
+  let lastOrderPayload = null;
 
   function showSubmitStatus(msg){
     submitStatus.style.display = 'block';
@@ -1037,6 +1038,7 @@
       shippingFee: fmt(summary.ship.fee),
       total: fmt(summary.total)
     };
+    lastOrderPayload = payload;
 
     submitBtn.disabled = true;
     submitBtn.textContent = '傳送中...';
@@ -1097,12 +1099,12 @@
     btn.disabled = true;
     btn.textContent = '傳送中...';
 
-    postToAppsScript({
+    const orderInfo = lastOrderPayload || { name: name, phone: phone };
+
+    postToAppsScript(Object.assign({}, orderInfo, {
       type: 'payment_notice',
-      name: name,
-      phone: phone,
       last5: last5
-    })
+    }))
       .then(function(){
         modalStatus.textContent = '已通知宇庭，感謝您的訂購與匯款！';
       })

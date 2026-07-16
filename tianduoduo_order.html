@@ -788,7 +788,7 @@
     <div class="modal-confirm">
       <label for="modal-last5">匯款帳號末五碼</label>
       <input type="text" id="modal-last5" maxlength="5" placeholder="請輸入匯款帳號末五碼">
-      <button type="button" class="btn-copy" id="notify-paid-btn">通知姿瑩已匯款</button>
+      <button type="button" class="btn-copy" id="notify-paid-btn">通知宇庭匯款末五碼</button>
     </div>
     <p class="modal-status" id="modal-status"></p>
   </div>
@@ -1104,14 +1104,14 @@
       last5: last5
     })
       .then(function(){
-        modalStatus.textContent = '已通知姿瑩，感謝您的訂購與匯款！';
+        modalStatus.textContent = '已通知宇庭，感謝您的訂購與匯款！';
       })
       .catch(function(){
         modalStatus.textContent = '通知傳送時發生問題，請透過 LINE 官方帳號告知我們已完成匯款。';
       })
       .finally(function(){
         btn.disabled = false;
-        btn.textContent = '通知姿瑩已匯款';
+        btn.textContent = '通知宇庭匯款末五碼';
       });
   });
 
